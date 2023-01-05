@@ -4,4 +4,4 @@
 ## 使い方
 見たらわかる．
 ## 質問・要望等
-githubのissueかTwitter([@littlegirl0820](https://twitter.com/littlegirl0820))まで
+githubの[issue](https://github.com/littlegirl0820/seikyo-simulater/issues)かTwitter([@littlegirl0820](https://twitter.com/littlegirl0820))まで
