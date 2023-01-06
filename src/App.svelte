@@ -1,5 +1,12 @@
 <script>
-	import { menuKanshita, menuFamiru, idIncrement, sum } from "./store.js";
+	import {
+		menuKanshita,
+		menuFamiru,
+		menuRainbow,
+		menuKasane,
+		idIncrement,
+		sum,
+	} from "./store.js";
 	import Optimize from "./optimize.svelte";
 	import Menu from "./menu.svelte";
 	import Gacha from "./gacha.svelte";
@@ -754,6 +761,333 @@
 			cost: 500,
 		},
 	];
+	$menuKasane = [
+		{
+			selected: false,
+			id: 0,
+			name: "中津唐揚げ",
+			red: 2.3,
+			green: 0.0,
+			yellow: 2.6,
+			cost: 308,
+		},
+		{
+			selected: false,
+			id: 1,
+			name: "ホイコーロー",
+			red: 1.4,
+			green: 0.6,
+			yellow: 1.6,
+			cost: 264,
+		},
+		{
+			selected: false,
+			id: 2,
+			name: "ローストンカツ味噌ソース",
+			red: 1.8,
+			green: 0.0,
+			yellow: 3.8,
+			cost: 264,
+		},
+		{
+			selected: false,
+			id: 3,
+			name: "柚子胡椒風味ハンバーグ",
+			red: 1.5,
+			green: 0.1,
+			yellow: 1.0,
+			cost: 220,
+		},
+		{
+			selected: false,
+			id: 4,
+			name: "ササミチーズカツタルタルソース",
+			red: 0.9,
+			green: 0.0,
+			yellow: 3.9,
+			cost: 220,
+		},
+		{
+			selected: false,
+			id: 5,
+			name: "麻婆茄子",
+			red: 0.0,
+			green: 0.5,
+			yellow: 3.2,
+			cost: 176,
+		},
+		{
+			selected: false,
+			id: 6,
+			name: "若鶏醤油揚げ",
+			red: 0.8,
+			green: 0.0,
+			yellow: 1.6,
+			cost: 176,
+		},
+		{
+			selected: false,
+			id: 7,
+			name: "ブリ照り煮",
+			red: 2.6,
+			green: 0.0,
+			yellow: 0.3,
+			cost: 176,
+		},
+		{
+			selected: false,
+			id: 8,
+			name: "肉じゃがコロッケ",
+			red: 0.1,
+			green: 0.3,
+			yellow: 2.7,
+			cost: 110,
+		},
+		{
+			selected: false,
+			id: 9,
+			name: "コーンとツナのサラダ",
+			red: 0.3,
+			green: 0.4,
+			yellow: 0.3,
+			cost: 110,
+		},
+		{
+			selected: false,
+			id: 10,
+			name: "オクラ巣ごもり玉子",
+			red: 1.0,
+			green: 0.1,
+			yellow: 0.1,
+			cost: 88,
+		},
+		{
+			selected: false,
+			id: 11,
+			name: "ヘルシーサラダ",
+			red: 0.1,
+			green: 0.3,
+			yellow: 0.5,
+			cost: 88,
+		},
+		{
+			selected: false,
+			id: 12,
+			name: "そぼろきんぴらごぼう",
+			red: 0.5,
+			green: 0.2,
+			yellow: 0.4,
+			cost: 88,
+		},
+		{
+			selected: false,
+			id: 13,
+			name: "わかさぎ南蛮",
+			red: 0.1,
+			green: 0.1,
+			yellow: 0.5,
+			cost: 88,
+		},
+		{
+			selected: false,
+			id: 14,
+			name: "ポテトサラダ",
+			red: 0.0,
+			green: 0.5,
+			yellow: 0.8,
+			cost: 66,
+		},
+		{
+			selected: false,
+			id: 15,
+			name: "ほうれん草おひたし",
+			red: 0.0,
+			green: 0.2,
+			yellow: 0.0,
+			cost: 66,
+		},
+		{
+			selected: false,
+			id: 16,
+			name: "ミニサラダ",
+			red: 0.0,
+			green: 0.1,
+			yellow: 0.0,
+			cost: 44,
+		},
+		{
+			selected: false,
+			id: 17,
+			name: "豚汁",
+			red: 0.6,
+			green: 0.4,
+			yellow: 0.4,
+			cost: 110,
+		},
+		{
+			selected: false,
+			id: 18,
+			name: "味噌汁",
+			red: 0.4,
+			green: 0.0,
+			yellow: 0.3,
+			cost: 33,
+		},
+		{
+			selected: false,
+			id: 19,
+			name: "温玉ぶっかけうどん",
+			red: 1.0,
+			green: 0.0,
+			yellow: 4.2,
+			cost: 297,
+		},
+		{
+			selected: false,
+			id: 20,
+			name: "温玉ぶっかけそば",
+			red: 1.0,
+			green: 0.0,
+			yellow: 3.8,
+			cost: 297,
+		},
+		{
+			selected: false,
+			id: 21,
+			name: "かき揚げうどん",
+			red: 0.0,
+			green: 0.2,
+			yellow: 5.6,
+			cost: 297,
+		},
+		{
+			selected: false,
+			id: 22,
+			name: "かき揚げそば",
+			red: 0.0,
+			green: 0.2,
+			yellow: 5.2,
+			cost: 297,
+		},
+		{
+			selected: false,
+			id: 23,
+			name: "かけうどん",
+			red: 0.0,
+			green: 0.0,
+			yellow: 4.2,
+			cost: 209,
+		},
+		{
+			selected: false,
+			id: 24,
+			name: "かけそば",
+			red: 0.0,
+			green: 0.0,
+			yellow: 3.8,
+			cost: 209,
+		},
+		{
+			selected: false,
+			id: 25,
+			name: "温玉ねぎとろ丼",
+			red: 1.5,
+			green: 0.1,
+			yellow: 6.1,
+			cost: 462,
+		},
+		{
+			selected: false,
+			id: 26,
+			name: "豚塩カルビ丼",
+			red: 2.0,
+			green: 0.2,
+			yellow: 5.4,
+			cost: 407,
+		},
+		{
+			selected: false,
+			id: 27,
+			name: "欧風カレー",
+			red: 0.5,
+			green: 0.2,
+			yellow: 6.7,
+			cost: 407,
+		},
+		{
+			selected: false,
+			id: 28,
+			name: "欧風カツカレー",
+			red: 1.9,
+			green: 0.2,
+			yellow: 8.9,
+			cost: 495,
+		},
+		{
+			selected: false,
+			id: 29,
+			name: "ライス",
+			red: 0.0,
+			green: 0.0,
+			yellow: 5.1,
+			cost: 115,
+		},
+		{
+			selected: false,
+			id: 30,
+			name: "日向夏レアチーズケーキ",
+			red: 0.0,
+			green: 0.0,
+			yellow: 2.1,
+			cost: 220,
+		},
+		{
+			selected: false,
+			id: 31,
+			name: "焼きプリンタルト",
+			red: 0.0,
+			green: 0.0,
+			yellow: 1.5,
+			cost: 66,
+		},
+		{
+			selected: false,
+			id: 32,
+			name: "大学芋",
+			red: 0.0,
+			green: 0.8,
+			yellow: 1.2,
+			cost: 88,
+		},
+		{
+			selected: false,
+			id: 33,
+			name: "つけ麺（坦々）",
+			red: 1.7,
+			green: 0.1,
+			yellow: 8.1,
+			cost: 528,
+		},
+		{
+			selected: false,
+			id: 34,
+			name: "つけ麺（魚介）",
+			red: 2.1,
+			green: 0.1,
+			yellow: 8.1,
+			cost: 528,
+		},
+		{
+			selected: false,
+			id: 35,
+			name: "ケバブプレート",
+			red: 2.6,
+			green: 0.5,
+			yellow: 6.1,
+			cost: 594,
+		},
+	];
+	$menuRainbow = [];
 	idIncrement.set($menuKanshita.length);
 	$sum = { cost: 0, red: 0.0, green: 0.0, yellow: 0.0 };
 	let state = 0;
@@ -787,6 +1121,22 @@
 	<Optimize menuList={$menuFamiru} />
 	<hr />
 	<Gacha menuList={$menuFamiru} />
+	<hr />
+{:else if state === 2}
+	<hr />
+	<Menu {state} menuList={$menuKasane} />
+	<hr />
+	<Optimize menuList={$menuKasane} />
+	<hr />
+	<Gacha menuList={$menuKasane} />
+	<hr />
+{:else if state === 3}
+	<hr />
+	<Menu {state} menuList={$menuRainbow} />
+	<hr />
+	<Optimize menuList={$menuRainbow} />
+	<hr />
+	<Gacha menuList={$menuRainbow} />
 	<hr />
 {/if}
 

@@ -516,6 +516,8 @@ var app = (function () {
 
     let menuKanshita = writable({});
     let menuFamiru = writable({});
+    let menuKasane = writable({});
+    let menuRainbow = writable({});
     let idIncrement = writable({});
     let sum = writable({});
 
@@ -1201,6 +1203,60 @@ var app = (function () {
     	return child_ctx;
     }
 
+    // (43:30) 
+    function create_if_block_3$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("@レインボー");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_3$1.name,
+    		type: "if",
+    		source: "(43:30) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (41:30) 
+    function create_if_block_2$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("@かさね");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2$1.name,
+    		type: "if",
+    		source: "(41:30) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
     // (39:30) 
     function create_if_block_1$1(ctx) {
     	let t;
@@ -1255,7 +1311,7 @@ var app = (function () {
     	return block;
     }
 
-    // (52:8) {#each menuList as item}
+    // (56:8) {#each menuList as item}
     function create_each_block$1(ctx) {
     	let div;
     	let li;
@@ -1340,29 +1396,29 @@ var app = (function () {
     			if (switch_instance) create_component(switch_instance.$$.fragment);
     			t7 = space();
     			attr_dev(input0, "type", "checkbox");
-    			add_location(input0, file$2, 54, 20, 1327);
+    			add_location(input0, file$2, 58, 20, 1425);
     			attr_dev(input1, "placeholder", "商品名");
     			attr_dev(input1, "class", "item svelte-16yw0ln");
-    			add_location(input1, file$2, 55, 20, 1402);
-    			add_location(br, file$2, 60, 20, 1578);
+    			add_location(input1, file$2, 59, 20, 1500);
+    			add_location(br, file$2, 64, 20, 1676);
     			attr_dev(input2, "type", "number");
     			attr_dev(input2, "step", "0.1");
     			attr_dev(input2, "class", "red svelte-16yw0ln");
-    			add_location(input2, file$2, 62, 20, 1627);
+    			add_location(input2, file$2, 66, 20, 1725);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "step", "0.1");
     			attr_dev(input3, "class", "green svelte-16yw0ln");
-    			add_location(input3, file$2, 69, 20, 1854);
+    			add_location(input3, file$2, 73, 20, 1952);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "step", "0.1");
     			attr_dev(input4, "class", "yellow svelte-16yw0ln");
-    			add_location(input4, file$2, 76, 20, 2085);
+    			add_location(input4, file$2, 80, 20, 2183);
     			attr_dev(input5, "type", "number");
     			attr_dev(input5, "class", "svelte-16yw0ln");
-    			add_location(input5, file$2, 82, 23, 2299);
+    			add_location(input5, file$2, 86, 23, 2397);
     			attr_dev(li, "class", "svelte-16yw0ln");
-    			add_location(li, file$2, 53, 16, 1302);
-    			add_location(div, file$2, 52, 12, 1258);
+    			add_location(li, file$2, 57, 16, 1400);
+    			add_location(div, file$2, 56, 12, 1356);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1481,7 +1537,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(52:8) {#each menuList as item}",
+    		source: "(56:8) {#each menuList as item}",
     		ctx
     	});
 
@@ -1524,6 +1580,8 @@ var app = (function () {
     	function select_block_type(ctx, dirty) {
     		if (/*state*/ ctx[1] === 0) return create_if_block$2;
     		if (/*state*/ ctx[1] === 1) return create_if_block_1$1;
+    		if (/*state*/ ctx[1] === 2) return create_if_block_2$1;
+    		if (/*state*/ ctx[1] === 3) return create_if_block_3$1;
     	}
 
     	let current_block_type = select_block_type(ctx);
@@ -1577,22 +1635,22 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "商品を追加する";
     			add_location(h20, file$2, 35, 4, 878);
-    			add_location(h21, file$2, 42, 4, 1005);
+    			add_location(h21, file$2, 46, 4, 1103);
     			attr_dev(label, "for", "expansion");
     			attr_dev(label, "class", "svelte-16yw0ln");
-    			add_location(label, file$2, 43, 4, 1039);
+    			add_location(label, file$2, 47, 4, 1137);
     			attr_dev(input, "type", "checkbox");
     			attr_dev(input, "id", "expansion");
     			attr_dev(input, "class", "accordion");
     			set_style(input, "display", "none");
-    			add_location(input, file$2, 44, 4, 1077);
+    			add_location(input, file$2, 48, 4, 1175);
     			attr_dev(ul, "id", "link");
     			attr_dev(ul, "class", "svelte-16yw0ln");
-    			add_location(ul, file$2, 50, 4, 1198);
-    			add_location(strong, file$2, 93, 8, 2605);
+    			add_location(ul, file$2, 54, 4, 1296);
+    			add_location(strong, file$2, 97, 8, 2703);
     			attr_dev(h3, "class", "svelte-16yw0ln");
-    			add_location(h3, file$2, 92, 4, 2592);
-    			add_location(button, file$2, 98, 4, 2764);
+    			add_location(h3, file$2, 96, 4, 2690);
+    			add_location(button, file$2, 102, 4, 2862);
     			attr_dev(div, "class", "items svelte-16yw0ln");
     			add_location(div, file$2, 34, 0, 854);
     		},
@@ -2356,8 +2414,8 @@ var app = (function () {
     /* src\App.svelte generated by Svelte v3.54.0 */
     const file = "src\\App.svelte";
 
-    // (783:22) 
-    function create_if_block_1(ctx) {
+    // (1133:22) 
+    function create_if_block_3(ctx) {
     	let hr0;
     	let t0;
     	let menu;
@@ -2376,18 +2434,18 @@ var app = (function () {
     	menu = new Menu({
     			props: {
     				state: /*state*/ ctx[0],
-    				menuList: /*$menuFamiru*/ ctx[2]
+    				menuList: /*$menuRainbow*/ ctx[2]
     			},
     			$$inline: true
     		});
 
     	optimize = new Optimize({
-    			props: { menuList: /*$menuFamiru*/ ctx[2] },
+    			props: { menuList: /*$menuRainbow*/ ctx[2] },
     			$$inline: true
     		});
 
     	gacha = new Gacha({
-    			props: { menuList: /*$menuFamiru*/ ctx[2] },
+    			props: { menuList: /*$menuRainbow*/ ctx[2] },
     			$$inline: true
     		});
 
@@ -2406,10 +2464,10 @@ var app = (function () {
     			create_component(gacha.$$.fragment);
     			t5 = space();
     			hr3 = element("hr");
-    			add_location(hr0, file, 783, 1, 10859);
-    			add_location(hr1, file, 785, 1, 10908);
-    			add_location(hr2, file, 787, 1, 10953);
-    			add_location(hr3, file, 789, 1, 10995);
+    			add_location(hr0, file, 1133, 1, 15498);
+    			add_location(hr1, file, 1135, 1, 15548);
+    			add_location(hr2, file, 1137, 1, 15594);
+    			add_location(hr3, file, 1139, 1, 15637);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, hr0, anchor);
@@ -2430,13 +2488,261 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const menu_changes = {};
     			if (dirty & /*state*/ 1) menu_changes.state = /*state*/ ctx[0];
-    			if (dirty & /*$menuFamiru*/ 4) menu_changes.menuList = /*$menuFamiru*/ ctx[2];
+    			if (dirty & /*$menuRainbow*/ 4) menu_changes.menuList = /*$menuRainbow*/ ctx[2];
     			menu.$set(menu_changes);
     			const optimize_changes = {};
-    			if (dirty & /*$menuFamiru*/ 4) optimize_changes.menuList = /*$menuFamiru*/ ctx[2];
+    			if (dirty & /*$menuRainbow*/ 4) optimize_changes.menuList = /*$menuRainbow*/ ctx[2];
     			optimize.$set(optimize_changes);
     			const gacha_changes = {};
-    			if (dirty & /*$menuFamiru*/ 4) gacha_changes.menuList = /*$menuFamiru*/ ctx[2];
+    			if (dirty & /*$menuRainbow*/ 4) gacha_changes.menuList = /*$menuRainbow*/ ctx[2];
+    			gacha.$set(gacha_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(menu.$$.fragment, local);
+    			transition_in(optimize.$$.fragment, local);
+    			transition_in(gacha.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(menu.$$.fragment, local);
+    			transition_out(optimize.$$.fragment, local);
+    			transition_out(gacha.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(hr0);
+    			if (detaching) detach_dev(t0);
+    			destroy_component(menu, detaching);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(hr1);
+    			if (detaching) detach_dev(t2);
+    			destroy_component(optimize, detaching);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(hr2);
+    			if (detaching) detach_dev(t4);
+    			destroy_component(gacha, detaching);
+    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(hr3);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_3.name,
+    		type: "if",
+    		source: "(1133:22) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (1125:22) 
+    function create_if_block_2(ctx) {
+    	let hr0;
+    	let t0;
+    	let menu;
+    	let t1;
+    	let hr1;
+    	let t2;
+    	let optimize;
+    	let t3;
+    	let hr2;
+    	let t4;
+    	let gacha;
+    	let t5;
+    	let hr3;
+    	let current;
+
+    	menu = new Menu({
+    			props: {
+    				state: /*state*/ ctx[0],
+    				menuList: /*$menuKasane*/ ctx[3]
+    			},
+    			$$inline: true
+    		});
+
+    	optimize = new Optimize({
+    			props: { menuList: /*$menuKasane*/ ctx[3] },
+    			$$inline: true
+    		});
+
+    	gacha = new Gacha({
+    			props: { menuList: /*$menuKasane*/ ctx[3] },
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			hr0 = element("hr");
+    			t0 = space();
+    			create_component(menu.$$.fragment);
+    			t1 = space();
+    			hr1 = element("hr");
+    			t2 = space();
+    			create_component(optimize.$$.fragment);
+    			t3 = space();
+    			hr2 = element("hr");
+    			t4 = space();
+    			create_component(gacha.$$.fragment);
+    			t5 = space();
+    			hr3 = element("hr");
+    			add_location(hr0, file, 1125, 1, 15331);
+    			add_location(hr1, file, 1127, 1, 15380);
+    			add_location(hr2, file, 1129, 1, 15425);
+    			add_location(hr3, file, 1131, 1, 15467);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, hr0, anchor);
+    			insert_dev(target, t0, anchor);
+    			mount_component(menu, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, hr1, anchor);
+    			insert_dev(target, t2, anchor);
+    			mount_component(optimize, target, anchor);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, hr2, anchor);
+    			insert_dev(target, t4, anchor);
+    			mount_component(gacha, target, anchor);
+    			insert_dev(target, t5, anchor);
+    			insert_dev(target, hr3, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const menu_changes = {};
+    			if (dirty & /*state*/ 1) menu_changes.state = /*state*/ ctx[0];
+    			if (dirty & /*$menuKasane*/ 8) menu_changes.menuList = /*$menuKasane*/ ctx[3];
+    			menu.$set(menu_changes);
+    			const optimize_changes = {};
+    			if (dirty & /*$menuKasane*/ 8) optimize_changes.menuList = /*$menuKasane*/ ctx[3];
+    			optimize.$set(optimize_changes);
+    			const gacha_changes = {};
+    			if (dirty & /*$menuKasane*/ 8) gacha_changes.menuList = /*$menuKasane*/ ctx[3];
+    			gacha.$set(gacha_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(menu.$$.fragment, local);
+    			transition_in(optimize.$$.fragment, local);
+    			transition_in(gacha.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(menu.$$.fragment, local);
+    			transition_out(optimize.$$.fragment, local);
+    			transition_out(gacha.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(hr0);
+    			if (detaching) detach_dev(t0);
+    			destroy_component(menu, detaching);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(hr1);
+    			if (detaching) detach_dev(t2);
+    			destroy_component(optimize, detaching);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(hr2);
+    			if (detaching) detach_dev(t4);
+    			destroy_component(gacha, detaching);
+    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(hr3);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2.name,
+    		type: "if",
+    		source: "(1125:22) ",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (1117:22) 
+    function create_if_block_1(ctx) {
+    	let hr0;
+    	let t0;
+    	let menu;
+    	let t1;
+    	let hr1;
+    	let t2;
+    	let optimize;
+    	let t3;
+    	let hr2;
+    	let t4;
+    	let gacha;
+    	let t5;
+    	let hr3;
+    	let current;
+
+    	menu = new Menu({
+    			props: {
+    				state: /*state*/ ctx[0],
+    				menuList: /*$menuFamiru*/ ctx[4]
+    			},
+    			$$inline: true
+    		});
+
+    	optimize = new Optimize({
+    			props: { menuList: /*$menuFamiru*/ ctx[4] },
+    			$$inline: true
+    		});
+
+    	gacha = new Gacha({
+    			props: { menuList: /*$menuFamiru*/ ctx[4] },
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			hr0 = element("hr");
+    			t0 = space();
+    			create_component(menu.$$.fragment);
+    			t1 = space();
+    			hr1 = element("hr");
+    			t2 = space();
+    			create_component(optimize.$$.fragment);
+    			t3 = space();
+    			hr2 = element("hr");
+    			t4 = space();
+    			create_component(gacha.$$.fragment);
+    			t5 = space();
+    			hr3 = element("hr");
+    			add_location(hr0, file, 1117, 1, 15164);
+    			add_location(hr1, file, 1119, 1, 15213);
+    			add_location(hr2, file, 1121, 1, 15258);
+    			add_location(hr3, file, 1123, 1, 15300);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, hr0, anchor);
+    			insert_dev(target, t0, anchor);
+    			mount_component(menu, target, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, hr1, anchor);
+    			insert_dev(target, t2, anchor);
+    			mount_component(optimize, target, anchor);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, hr2, anchor);
+    			insert_dev(target, t4, anchor);
+    			mount_component(gacha, target, anchor);
+    			insert_dev(target, t5, anchor);
+    			insert_dev(target, hr3, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const menu_changes = {};
+    			if (dirty & /*state*/ 1) menu_changes.state = /*state*/ ctx[0];
+    			if (dirty & /*$menuFamiru*/ 16) menu_changes.menuList = /*$menuFamiru*/ ctx[4];
+    			menu.$set(menu_changes);
+    			const optimize_changes = {};
+    			if (dirty & /*$menuFamiru*/ 16) optimize_changes.menuList = /*$menuFamiru*/ ctx[4];
+    			optimize.$set(optimize_changes);
+    			const gacha_changes = {};
+    			if (dirty & /*$menuFamiru*/ 16) gacha_changes.menuList = /*$menuFamiru*/ ctx[4];
     			gacha.$set(gacha_changes);
     		},
     		i: function intro(local) {
@@ -2473,14 +2779,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(783:22) ",
+    		source: "(1117:22) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (775:0) {#if state === 0}
+    // (1109:0) {#if state === 0}
     function create_if_block(ctx) {
     	let hr0;
     	let t0;
@@ -2530,10 +2836,10 @@ var app = (function () {
     			create_component(gacha.$$.fragment);
     			t5 = space();
     			hr3 = element("hr");
-    			add_location(hr0, file, 775, 1, 10686);
-    			add_location(hr1, file, 777, 1, 10737);
-    			add_location(hr2, file, 779, 1, 10784);
-    			add_location(hr3, file, 781, 1, 10828);
+    			add_location(hr0, file, 1109, 1, 14991);
+    			add_location(hr1, file, 1111, 1, 15042);
+    			add_location(hr2, file, 1113, 1, 15089);
+    			add_location(hr3, file, 1115, 1, 15133);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, hr0, anchor);
@@ -2597,7 +2903,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(775:0) {#if state === 0}",
+    		source: "(1109:0) {#if state === 0}",
     		ctx
     	});
 
@@ -2628,12 +2934,14 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	const if_block_creators = [create_if_block, create_if_block_1];
+    	const if_block_creators = [create_if_block, create_if_block_1, create_if_block_2, create_if_block_3];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
     		if (/*state*/ ctx[0] === 0) return 0;
     		if (/*state*/ ctx[0] === 1) return 1;
+    		if (/*state*/ ctx[0] === 2) return 2;
+    		if (/*state*/ ctx[0] === 3) return 3;
     		return -1;
     	}
 
@@ -2669,17 +2977,17 @@ var app = (function () {
     			t15 = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
-    			add_location(h1, file, 761, 0, 10273);
-    			add_location(h30, file, 762, 0, 10296);
+    			add_location(h1, file, 1095, 0, 14578);
+    			add_location(h30, file, 1096, 0, 14601);
     			attr_dev(a, "href", "https://west2-univ.jp/sp/osaka-univ.php");
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noreferrer");
-    			add_location(a, file, 764, 21, 10347);
-    			add_location(h31, file, 763, 0, 10321);
-    			add_location(button0, file, 770, 0, 10462);
-    			add_location(button1, file, 771, 0, 10513);
-    			add_location(button2, file, 772, 0, 10565);
-    			add_location(button3, file, 773, 0, 10615);
+    			add_location(a, file, 1098, 21, 14652);
+    			add_location(h31, file, 1097, 0, 14626);
+    			add_location(button0, file, 1104, 0, 14767);
+    			add_location(button1, file, 1105, 0, 14818);
+    			add_location(button2, file, 1106, 0, 14870);
+    			add_location(button3, file, 1107, 0, 14920);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2712,10 +3020,10 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", /*click_handler*/ ctx[3], false, false, false),
-    					listen_dev(button1, "click", /*click_handler_1*/ ctx[4], false, false, false),
-    					listen_dev(button2, "click", /*click_handler_2*/ ctx[5], false, false, false),
-    					listen_dev(button3, "click", /*click_handler_3*/ ctx[6], false, false, false)
+    					listen_dev(button0, "click", /*click_handler*/ ctx[5], false, false, false),
+    					listen_dev(button1, "click", /*click_handler_1*/ ctx[6], false, false, false),
+    					listen_dev(button2, "click", /*click_handler_2*/ ctx[7], false, false, false),
+    					listen_dev(button3, "click", /*click_handler_3*/ ctx[8], false, false, false)
     				];
 
     				mounted = true;
@@ -2806,13 +3114,19 @@ var app = (function () {
     function instance($$self, $$props, $$invalidate) {
     	let $sum;
     	let $menuKanshita;
+    	let $menuRainbow;
+    	let $menuKasane;
     	let $menuFamiru;
     	validate_store(sum, 'sum');
-    	component_subscribe($$self, sum, $$value => $$invalidate(7, $sum = $$value));
+    	component_subscribe($$self, sum, $$value => $$invalidate(9, $sum = $$value));
     	validate_store(menuKanshita, 'menuKanshita');
     	component_subscribe($$self, menuKanshita, $$value => $$invalidate(1, $menuKanshita = $$value));
+    	validate_store(menuRainbow, 'menuRainbow');
+    	component_subscribe($$self, menuRainbow, $$value => $$invalidate(2, $menuRainbow = $$value));
+    	validate_store(menuKasane, 'menuKasane');
+    	component_subscribe($$self, menuKasane, $$value => $$invalidate(3, $menuKasane = $$value));
     	validate_store(menuFamiru, 'menuFamiru');
-    	component_subscribe($$self, menuFamiru, $$value => $$invalidate(2, $menuFamiru = $$value));
+    	component_subscribe($$self, menuFamiru, $$value => $$invalidate(4, $menuFamiru = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('App', slots, []);
 
@@ -3577,6 +3891,338 @@ var app = (function () {
     		$menuFamiru
     	);
 
+    	set_store_value(
+    		menuKasane,
+    		$menuKasane = [
+    			{
+    				selected: false,
+    				id: 0,
+    				name: "中津唐揚げ",
+    				red: 2.3,
+    				green: 0.0,
+    				yellow: 2.6,
+    				cost: 308
+    			},
+    			{
+    				selected: false,
+    				id: 1,
+    				name: "ホイコーロー",
+    				red: 1.4,
+    				green: 0.6,
+    				yellow: 1.6,
+    				cost: 264
+    			},
+    			{
+    				selected: false,
+    				id: 2,
+    				name: "ローストンカツ味噌ソース",
+    				red: 1.8,
+    				green: 0.0,
+    				yellow: 3.8,
+    				cost: 264
+    			},
+    			{
+    				selected: false,
+    				id: 3,
+    				name: "柚子胡椒風味ハンバーグ",
+    				red: 1.5,
+    				green: 0.1,
+    				yellow: 1.0,
+    				cost: 220
+    			},
+    			{
+    				selected: false,
+    				id: 4,
+    				name: "ササミチーズカツタルタルソース",
+    				red: 0.9,
+    				green: 0.0,
+    				yellow: 3.9,
+    				cost: 220
+    			},
+    			{
+    				selected: false,
+    				id: 5,
+    				name: "麻婆茄子",
+    				red: 0.0,
+    				green: 0.5,
+    				yellow: 3.2,
+    				cost: 176
+    			},
+    			{
+    				selected: false,
+    				id: 6,
+    				name: "若鶏醤油揚げ",
+    				red: 0.8,
+    				green: 0.0,
+    				yellow: 1.6,
+    				cost: 176
+    			},
+    			{
+    				selected: false,
+    				id: 7,
+    				name: "ブリ照り煮",
+    				red: 2.6,
+    				green: 0.0,
+    				yellow: 0.3,
+    				cost: 176
+    			},
+    			{
+    				selected: false,
+    				id: 8,
+    				name: "肉じゃがコロッケ",
+    				red: 0.1,
+    				green: 0.3,
+    				yellow: 2.7,
+    				cost: 110
+    			},
+    			{
+    				selected: false,
+    				id: 9,
+    				name: "コーンとツナのサラダ",
+    				red: 0.3,
+    				green: 0.4,
+    				yellow: 0.3,
+    				cost: 110
+    			},
+    			{
+    				selected: false,
+    				id: 10,
+    				name: "オクラ巣ごもり玉子",
+    				red: 1.0,
+    				green: 0.1,
+    				yellow: 0.1,
+    				cost: 88
+    			},
+    			{
+    				selected: false,
+    				id: 11,
+    				name: "ヘルシーサラダ",
+    				red: 0.1,
+    				green: 0.3,
+    				yellow: 0.5,
+    				cost: 88
+    			},
+    			{
+    				selected: false,
+    				id: 12,
+    				name: "そぼろきんぴらごぼう",
+    				red: 0.5,
+    				green: 0.2,
+    				yellow: 0.4,
+    				cost: 88
+    			},
+    			{
+    				selected: false,
+    				id: 13,
+    				name: "わかさぎ南蛮",
+    				red: 0.1,
+    				green: 0.1,
+    				yellow: 0.5,
+    				cost: 88
+    			},
+    			{
+    				selected: false,
+    				id: 14,
+    				name: "ポテトサラダ",
+    				red: 0.0,
+    				green: 0.5,
+    				yellow: 0.8,
+    				cost: 66
+    			},
+    			{
+    				selected: false,
+    				id: 15,
+    				name: "ほうれん草おひたし",
+    				red: 0.0,
+    				green: 0.2,
+    				yellow: 0.0,
+    				cost: 66
+    			},
+    			{
+    				selected: false,
+    				id: 16,
+    				name: "ミニサラダ",
+    				red: 0.0,
+    				green: 0.1,
+    				yellow: 0.0,
+    				cost: 44
+    			},
+    			{
+    				selected: false,
+    				id: 17,
+    				name: "豚汁",
+    				red: 0.6,
+    				green: 0.4,
+    				yellow: 0.4,
+    				cost: 110
+    			},
+    			{
+    				selected: false,
+    				id: 18,
+    				name: "味噌汁",
+    				red: 0.4,
+    				green: 0.0,
+    				yellow: 0.3,
+    				cost: 33
+    			},
+    			{
+    				selected: false,
+    				id: 19,
+    				name: "温玉ぶっかけうどん",
+    				red: 1.0,
+    				green: 0.0,
+    				yellow: 4.2,
+    				cost: 297
+    			},
+    			{
+    				selected: false,
+    				id: 20,
+    				name: "温玉ぶっかけそば",
+    				red: 1.0,
+    				green: 0.0,
+    				yellow: 3.8,
+    				cost: 297
+    			},
+    			{
+    				selected: false,
+    				id: 21,
+    				name: "かき揚げうどん",
+    				red: 0.0,
+    				green: 0.2,
+    				yellow: 5.6,
+    				cost: 297
+    			},
+    			{
+    				selected: false,
+    				id: 22,
+    				name: "かき揚げそば",
+    				red: 0.0,
+    				green: 0.2,
+    				yellow: 5.2,
+    				cost: 297
+    			},
+    			{
+    				selected: false,
+    				id: 23,
+    				name: "かけうどん",
+    				red: 0.0,
+    				green: 0.0,
+    				yellow: 4.2,
+    				cost: 209
+    			},
+    			{
+    				selected: false,
+    				id: 24,
+    				name: "かけそば",
+    				red: 0.0,
+    				green: 0.0,
+    				yellow: 3.8,
+    				cost: 209
+    			},
+    			{
+    				selected: false,
+    				id: 25,
+    				name: "温玉ねぎとろ丼",
+    				red: 1.5,
+    				green: 0.1,
+    				yellow: 6.1,
+    				cost: 462
+    			},
+    			{
+    				selected: false,
+    				id: 26,
+    				name: "豚塩カルビ丼",
+    				red: 2.0,
+    				green: 0.2,
+    				yellow: 5.4,
+    				cost: 407
+    			},
+    			{
+    				selected: false,
+    				id: 27,
+    				name: "欧風カレー",
+    				red: 0.5,
+    				green: 0.2,
+    				yellow: 6.7,
+    				cost: 407
+    			},
+    			{
+    				selected: false,
+    				id: 28,
+    				name: "欧風カツカレー",
+    				red: 1.9,
+    				green: 0.2,
+    				yellow: 8.9,
+    				cost: 495
+    			},
+    			{
+    				selected: false,
+    				id: 29,
+    				name: "ライス",
+    				red: 0.0,
+    				green: 0.0,
+    				yellow: 5.1,
+    				cost: 115
+    			},
+    			{
+    				selected: false,
+    				id: 30,
+    				name: "日向夏レアチーズケーキ",
+    				red: 0.0,
+    				green: 0.0,
+    				yellow: 2.1,
+    				cost: 220
+    			},
+    			{
+    				selected: false,
+    				id: 31,
+    				name: "焼きプリンタルト",
+    				red: 0.0,
+    				green: 0.0,
+    				yellow: 1.5,
+    				cost: 66
+    			},
+    			{
+    				selected: false,
+    				id: 32,
+    				name: "大学芋",
+    				red: 0.0,
+    				green: 0.8,
+    				yellow: 1.2,
+    				cost: 88
+    			},
+    			{
+    				selected: false,
+    				id: 33,
+    				name: "つけ麺（坦々）",
+    				red: 1.7,
+    				green: 0.1,
+    				yellow: 8.1,
+    				cost: 528
+    			},
+    			{
+    				selected: false,
+    				id: 34,
+    				name: "つけ麺（魚介）",
+    				red: 2.1,
+    				green: 0.1,
+    				yellow: 8.1,
+    				cost: 528
+    			},
+    			{
+    				selected: false,
+    				id: 35,
+    				name: "ケバブプレート",
+    				red: 2.6,
+    				green: 0.5,
+    				yellow: 6.1,
+    				cost: 594
+    			}
+    		],
+    		$menuKasane
+    	);
+
+    	set_store_value(menuRainbow, $menuRainbow = [], $menuRainbow);
     	idIncrement.set($menuKanshita.length);
 
     	set_store_value(
@@ -3605,6 +4251,8 @@ var app = (function () {
     	$$self.$capture_state = () => ({
     		menuKanshita,
     		menuFamiru,
+    		menuRainbow,
+    		menuKasane,
     		idIncrement,
     		sum,
     		Optimize,
@@ -3613,6 +4261,8 @@ var app = (function () {
     		state,
     		$sum,
     		$menuKanshita,
+    		$menuRainbow,
+    		$menuKasane,
     		$menuFamiru
     	});
 
@@ -3627,6 +4277,8 @@ var app = (function () {
     	return [
     		state,
     		$menuKanshita,
+    		$menuRainbow,
+    		$menuKasane,
     		$menuFamiru,
     		click_handler,
     		click_handler_1,
