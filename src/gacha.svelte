@@ -4,6 +4,7 @@
     let price = 550;
     let isCasted = false;
     let res = { c: 0, r: 0.0, g: 0.0, y: 0.0, menu: [] };
+    let tweetText = "";
     function castLots() {
         let len = $storeFE.length;
         let seq = [];
@@ -31,6 +32,13 @@
                 res.menu.push($storeFE[x].name);
             }
         }
+        tweetText = "生協食堂";
+        tweetText += price;
+        tweetText += "円ガチャで%0D%0A";
+        for (const x of res.menu) {
+            tweetText += "『" + x + "』%0D%0A";
+        }
+        tweetText += "が出ました！%0D%0A";
         isCasted = true;
     }
 </script>
@@ -72,6 +80,12 @@
             </li>
         </div>
     {/each}
+    <a
+        href="https://twitter.com/share?url=https://seikyo-simulater.vercel.app/&amp;text={tweetText}"
+        rel="noreferrer"
+        target="_blank"
+        class="twitter-share-button">ツイートする</a
+    >
 {/if}
 
 <style>
@@ -80,6 +94,17 @@
         margin-bottom: 10px;
         border: 1px solid #333333;
         border-radius: 10px;
+        text-align: center;
+    }
+    a.twitter-share-button {
+        display: inline-block;
+        color: #1da1f2;
+        font-size: 1em;
+        font-weight: lighter;
+        border: 1px solid;
+        padding: 1em;
+        line-height: 1em;
+        border-radius: 1em;
         text-align: center;
     }
 </style>

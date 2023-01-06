@@ -94,6 +94,14 @@ var app = (function () {
     function set_input_value(input, value) {
         input.value = value == null ? '' : value;
     }
+    function set_style(node, key, value, important) {
+        if (value === null) {
+            node.style.removeProperty(key);
+        }
+        else {
+            node.style.setProperty(key, value, important ? 'important' : '');
+        }
+    }
     function custom_event(type, detail, { bubbles = false, cancelable = false } = {}) {
         const e = document.createEvent('CustomEvent');
         e.initCustomEvent(type, bubbles, cancelable, detail);
@@ -1149,9 +1157,10 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (37:8) {#each $storeFE as item}
+    // (44:8) {#each $storeFE as item}
     function create_each_block$1(ctx) {
     	let div;
+    	let li;
     	let input0;
     	let t0;
     	let input1;
@@ -1212,68 +1221,72 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			div = element("div");
+    			li = element("li");
     			input0 = element("input");
     			t0 = space();
     			input1 = element("input");
     			t1 = space();
     			br = element("br");
-    			t2 = text("\n                赤\n                ");
+    			t2 = text("\n                    赤\n                    ");
     			input2 = element("input");
-    			t3 = text("\n                緑\n                ");
+    			t3 = text("\n                    緑\n                    ");
     			input3 = element("input");
-    			t4 = text("\n                黄\n                ");
+    			t4 = text("\n                    黄\n                    ");
     			input4 = element("input");
-    			t5 = text("\n                値段 ");
+    			t5 = text("\n                    値段 ");
     			input5 = element("input");
-    			t6 = text("円\n                ");
+    			t6 = text("円\n                    ");
     			if (switch_instance) create_component(switch_instance.$$.fragment);
     			t7 = space();
     			attr_dev(input0, "type", "checkbox");
-    			add_location(input0, file$2, 38, 16, 978);
+    			add_location(input0, file$2, 46, 20, 1172);
     			attr_dev(input1, "placeholder", "商品名");
-    			attr_dev(input1, "class", "item svelte-bqys7a");
-    			add_location(input1, file$2, 39, 16, 1049);
-    			add_location(br, file$2, 44, 16, 1205);
+    			attr_dev(input1, "class", "item svelte-16yw0ln");
+    			add_location(input1, file$2, 47, 20, 1247);
+    			add_location(br, file$2, 52, 20, 1423);
     			attr_dev(input2, "type", "number");
     			attr_dev(input2, "step", "0.1");
-    			attr_dev(input2, "class", "red svelte-bqys7a");
-    			add_location(input2, file$2, 46, 16, 1246);
+    			attr_dev(input2, "class", "red svelte-16yw0ln");
+    			add_location(input2, file$2, 54, 20, 1472);
     			attr_dev(input3, "type", "number");
     			attr_dev(input3, "step", "0.1");
-    			attr_dev(input3, "class", "green svelte-bqys7a");
-    			add_location(input3, file$2, 53, 16, 1445);
+    			attr_dev(input3, "class", "green svelte-16yw0ln");
+    			add_location(input3, file$2, 61, 20, 1699);
     			attr_dev(input4, "type", "number");
     			attr_dev(input4, "step", "0.1");
-    			attr_dev(input4, "class", "yellow svelte-bqys7a");
-    			add_location(input4, file$2, 60, 16, 1648);
+    			attr_dev(input4, "class", "yellow svelte-16yw0ln");
+    			add_location(input4, file$2, 68, 20, 1930);
     			attr_dev(input5, "type", "number");
-    			attr_dev(input5, "class", "svelte-bqys7a");
-    			add_location(input5, file$2, 66, 19, 1838);
-    			add_location(div, file$2, 37, 12, 934);
+    			attr_dev(input5, "class", "svelte-16yw0ln");
+    			add_location(input5, file$2, 74, 23, 2144);
+    			attr_dev(li, "class", "svelte-16yw0ln");
+    			add_location(li, file$2, 45, 16, 1147);
+    			add_location(div, file$2, 44, 12, 1103);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
-    			append_dev(div, input0);
+    			append_dev(div, li);
+    			append_dev(li, input0);
     			input0.checked = /*item*/ ctx[11].selected;
-    			append_dev(div, t0);
-    			append_dev(div, input1);
+    			append_dev(li, t0);
+    			append_dev(li, input1);
     			set_input_value(input1, /*item*/ ctx[11].name);
-    			append_dev(div, t1);
-    			append_dev(div, br);
-    			append_dev(div, t2);
-    			append_dev(div, input2);
+    			append_dev(li, t1);
+    			append_dev(li, br);
+    			append_dev(li, t2);
+    			append_dev(li, input2);
     			set_input_value(input2, /*item*/ ctx[11].red);
-    			append_dev(div, t3);
-    			append_dev(div, input3);
+    			append_dev(li, t3);
+    			append_dev(li, input3);
     			set_input_value(input3, /*item*/ ctx[11].green);
-    			append_dev(div, t4);
-    			append_dev(div, input4);
+    			append_dev(li, t4);
+    			append_dev(li, input4);
     			set_input_value(input4, /*item*/ ctx[11].yellow);
-    			append_dev(div, t5);
-    			append_dev(div, input5);
+    			append_dev(li, t5);
+    			append_dev(li, input5);
     			set_input_value(input5, /*item*/ ctx[11].cost);
-    			append_dev(div, t6);
-    			if (switch_instance) mount_component(switch_instance, div, null);
+    			append_dev(li, t6);
+    			if (switch_instance) mount_component(switch_instance, li, null);
     			append_dev(div, t7);
     			current = true;
 
@@ -1337,7 +1350,7 @@ var app = (function () {
     					switch_instance = construct_svelte_component_dev(switch_value, switch_props(ctx));
     					create_component(switch_instance.$$.fragment);
     					transition_in(switch_instance.$$.fragment, 1);
-    					mount_component(switch_instance, div, t7);
+    					mount_component(switch_instance, li, null);
     				} else {
     					switch_instance = null;
     				}
@@ -1366,7 +1379,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(37:8) {#each $storeFE as item}",
+    		source: "(44:8) {#each $storeFE as item}",
     		ctx
     	});
 
@@ -1379,24 +1392,28 @@ var app = (function () {
     	let t1;
     	let h21;
     	let t3;
+    	let label;
+    	let t5;
+    	let input;
+    	let t6;
     	let ul;
-    	let t4;
+    	let t7;
     	let h3;
     	let strong;
-    	let t6;
-    	let t7_value = /*$sum*/ ctx[0].cost + "";
-    	let t7;
-    	let t8;
-    	let t9_value = /*$sum*/ ctx[0].red.toFixed(1) + "";
     	let t9;
+    	let t10_value = /*$sum*/ ctx[0].cost + "";
     	let t10;
-    	let t11_value = /*$sum*/ ctx[0].green.toFixed(1) + "";
     	let t11;
+    	let t12_value = /*$sum*/ ctx[0].red.toFixed(1) + "";
     	let t12;
-    	let t13_value = /*$sum*/ ctx[0].yellow.toFixed(1) + "";
     	let t13;
+    	let t14_value = /*$sum*/ ctx[0].green.toFixed(1) + "";
     	let t14;
     	let t15;
+    	let t16_value = /*$sum*/ ctx[0].yellow.toFixed(1) + "";
+    	let t16;
+    	let t17;
+    	let t18;
     	let button;
     	let current;
     	let mounted;
@@ -1422,36 +1439,51 @@ var app = (function () {
     			h21 = element("h2");
     			h21.textContent = "選択した商品の合計点数と値段を表示します";
     			t3 = space();
+    			label = element("label");
+    			label.textContent = "展開";
+    			t5 = space();
+    			input = element("input");
+    			t6 = space();
     			ul = element("ul");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			t4 = space();
+    			t7 = space();
     			h3 = element("h3");
     			strong = element("strong");
     			strong.textContent = "合計金額";
-    			t6 = space();
-    			t7 = text(t7_value);
-    			t8 = text("円 赤 ");
-    			t9 = text(t9_value);
-    			t10 = text("点 緑 ");
-    			t11 = text(t11_value);
-    			t12 = text("点 黄 ");
-    			t13 = text(t13_value);
-    			t14 = text("点");
-    			t15 = space();
+    			t9 = space();
+    			t10 = text(t10_value);
+    			t11 = text("円 赤 ");
+    			t12 = text(t12_value);
+    			t13 = text("点 緑 ");
+    			t14 = text(t14_value);
+    			t15 = text("点 黄 ");
+    			t16 = text(t16_value);
+    			t17 = text("点");
+    			t18 = space();
     			button = element("button");
     			button.textContent = "商品を追加する";
     			add_location(h20, file$2, 33, 4, 831);
     			add_location(h21, file$2, 34, 4, 850);
-    			add_location(ul, file$2, 35, 4, 884);
-    			add_location(strong, file$2, 72, 8, 2018);
-    			attr_dev(h3, "class", "svelte-bqys7a");
-    			add_location(h3, file$2, 71, 4, 2005);
-    			add_location(button, file$2, 77, 4, 2177);
-    			attr_dev(div, "class", "items svelte-bqys7a");
+    			attr_dev(label, "for", "expansion");
+    			attr_dev(label, "class", "svelte-16yw0ln");
+    			add_location(label, file$2, 35, 4, 884);
+    			attr_dev(input, "type", "checkbox");
+    			attr_dev(input, "id", "expansion");
+    			attr_dev(input, "class", "accordion");
+    			set_style(input, "display", "none");
+    			add_location(input, file$2, 36, 4, 922);
+    			attr_dev(ul, "id", "link");
+    			attr_dev(ul, "class", "svelte-16yw0ln");
+    			add_location(ul, file$2, 42, 4, 1043);
+    			add_location(strong, file$2, 81, 8, 2350);
+    			attr_dev(h3, "class", "svelte-16yw0ln");
+    			add_location(h3, file$2, 80, 4, 2337);
+    			add_location(button, file$2, 86, 4, 2509);
+    			attr_dev(div, "class", "items svelte-16yw0ln");
     			add_location(div, file$2, 32, 0, 807);
     		},
     		l: function claim(nodes) {
@@ -1463,25 +1495,29 @@ var app = (function () {
     			append_dev(div, t1);
     			append_dev(div, h21);
     			append_dev(div, t3);
+    			append_dev(div, label);
+    			append_dev(div, t5);
+    			append_dev(div, input);
+    			append_dev(div, t6);
     			append_dev(div, ul);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].m(ul, null);
     			}
 
-    			append_dev(div, t4);
+    			append_dev(div, t7);
     			append_dev(div, h3);
     			append_dev(h3, strong);
-    			append_dev(h3, t6);
-    			append_dev(h3, t7);
-    			append_dev(h3, t8);
     			append_dev(h3, t9);
     			append_dev(h3, t10);
     			append_dev(h3, t11);
     			append_dev(h3, t12);
     			append_dev(h3, t13);
     			append_dev(h3, t14);
-    			append_dev(div, t15);
+    			append_dev(h3, t15);
+    			append_dev(h3, t16);
+    			append_dev(h3, t17);
+    			append_dev(div, t18);
     			append_dev(div, button);
     			current = true;
 
@@ -1519,10 +1555,10 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if ((!current || dirty & /*$sum*/ 1) && t7_value !== (t7_value = /*$sum*/ ctx[0].cost + "")) set_data_dev(t7, t7_value);
-    			if ((!current || dirty & /*$sum*/ 1) && t9_value !== (t9_value = /*$sum*/ ctx[0].red.toFixed(1) + "")) set_data_dev(t9, t9_value);
-    			if ((!current || dirty & /*$sum*/ 1) && t11_value !== (t11_value = /*$sum*/ ctx[0].green.toFixed(1) + "")) set_data_dev(t11, t11_value);
-    			if ((!current || dirty & /*$sum*/ 1) && t13_value !== (t13_value = /*$sum*/ ctx[0].yellow.toFixed(1) + "")) set_data_dev(t13, t13_value);
+    			if ((!current || dirty & /*$sum*/ 1) && t10_value !== (t10_value = /*$sum*/ ctx[0].cost + "")) set_data_dev(t10, t10_value);
+    			if ((!current || dirty & /*$sum*/ 1) && t12_value !== (t12_value = /*$sum*/ ctx[0].red.toFixed(1) + "")) set_data_dev(t12, t12_value);
+    			if ((!current || dirty & /*$sum*/ 1) && t14_value !== (t14_value = /*$sum*/ ctx[0].green.toFixed(1) + "")) set_data_dev(t14, t14_value);
+    			if ((!current || dirty & /*$sum*/ 1) && t16_value !== (t16_value = /*$sum*/ ctx[0].yellow.toFixed(1) + "")) set_data_dev(t16, t16_value);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -1693,11 +1729,11 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[9] = list[i];
+    	child_ctx[10] = list[i];
     	return child_ctx;
     }
 
-    // (61:0) {#if isCasted}
+    // (69:0) {#if isCasted}
     function create_if_block(ctx) {
     	let h3;
     	let t0_value = /*res*/ ctx[2].c + "";
@@ -1713,7 +1749,10 @@ var app = (function () {
     	let t6;
     	let t7;
     	let t8;
-    	let each_1_anchor;
+    	let t9;
+    	let a;
+    	let t10;
+    	let a_href_value;
     	let each_value = /*res*/ ctx[2].menu;
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -1739,8 +1778,15 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			each_1_anchor = empty();
-    			add_location(h3, file$1, 61, 4, 1545);
+    			t9 = space();
+    			a = element("a");
+    			t10 = text("ツイートする");
+    			add_location(h3, file$1, 69, 4, 1790);
+    			attr_dev(a, "href", a_href_value = "https://twitter.com/share?url=https://seikyo-simulater.vercel.app/&text=" + /*tweetText*/ ctx[3]);
+    			attr_dev(a, "rel", "noreferrer");
+    			attr_dev(a, "target", "_blank");
+    			attr_dev(a, "class", "twitter-share-button svelte-1nxsy32");
+    			add_location(a, file$1, 82, 4, 2055);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h3, anchor);
@@ -1758,7 +1804,9 @@ var app = (function () {
     				each_blocks[i].m(target, anchor);
     			}
 
-    			insert_dev(target, each_1_anchor, anchor);
+    			insert_dev(target, t9, anchor);
+    			insert_dev(target, a, anchor);
+    			append_dev(a, t10);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*res*/ 4 && t0_value !== (t0_value = /*res*/ ctx[2].c + "")) set_data_dev(t0, t0_value);
@@ -1779,7 +1827,7 @@ var app = (function () {
     					} else {
     						each_blocks[i] = create_each_block(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    						each_blocks[i].m(t9.parentNode, t9);
     					}
     				}
 
@@ -1789,12 +1837,17 @@ var app = (function () {
 
     				each_blocks.length = each_value.length;
     			}
+
+    			if (dirty & /*tweetText*/ 8 && a_href_value !== (a_href_value = "https://twitter.com/share?url=https://seikyo-simulater.vercel.app/&text=" + /*tweetText*/ ctx[3])) {
+    				attr_dev(a, "href", a_href_value);
+    			}
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(h3);
     			if (detaching) detach_dev(t8);
     			destroy_each(each_blocks, detaching);
-    			if (detaching) detach_dev(each_1_anchor);
+    			if (detaching) detach_dev(t9);
+    			if (detaching) detach_dev(a);
     		}
     	};
 
@@ -1802,39 +1855,36 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(61:0) {#if isCasted}",
+    		source: "(69:0) {#if isCasted}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (68:4) {#each res.menu as menu}
+    // (76:4) {#each res.menu as menu}
     function create_each_block(ctx) {
     	let div;
     	let li;
-    	let t0_value = /*menu*/ ctx[9] + "";
-    	let t0;
-    	let t1;
+    	let t_value = /*menu*/ ctx[10] + "";
+    	let t;
 
     	const block = {
     		c: function create() {
     			div = element("div");
     			li = element("li");
-    			t0 = text(t0_value);
-    			t1 = space();
-    			add_location(li, file$1, 69, 12, 1733);
-    			attr_dev(div, "class", "res svelte-s24jm");
-    			add_location(div, file$1, 68, 8, 1703);
+    			t = text(t_value);
+    			add_location(li, file$1, 77, 12, 1978);
+    			attr_dev(div, "class", "res svelte-1nxsy32");
+    			add_location(div, file$1, 76, 8, 1948);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, li);
-    			append_dev(li, t0);
-    			append_dev(div, t1);
+    			append_dev(li, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*res*/ 4 && t0_value !== (t0_value = /*menu*/ ctx[9] + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*res*/ 4 && t_value !== (t_value = /*menu*/ ctx[10] + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -1845,7 +1895,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(68:4) {#each res.menu as menu}",
+    		source: "(76:4) {#each res.menu as menu}",
     		ctx
     	});
 
@@ -1900,15 +1950,15 @@ var app = (function () {
     			t13 = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
-    			add_location(h2, file$1, 37, 0, 1100);
-    			add_location(h3, file$1, 38, 0, 1117);
+    			add_location(h2, file$1, 45, 0, 1345);
+    			add_location(h3, file$1, 46, 0, 1362);
     			attr_dev(input, "type", "number");
-    			add_location(input, file$1, 39, 0, 1150);
-    			add_location(br, file$1, 39, 43, 1193);
-    			add_location(button0, file$1, 41, 0, 1201);
-    			add_location(button1, file$1, 42, 0, 1243);
-    			add_location(button2, file$1, 48, 0, 1336);
-    			add_location(button3, file$1, 54, 0, 1431);
+    			add_location(input, file$1, 47, 0, 1395);
+    			add_location(br, file$1, 47, 43, 1438);
+    			add_location(button0, file$1, 49, 0, 1446);
+    			add_location(button1, file$1, 50, 0, 1488);
+    			add_location(button2, file$1, 56, 0, 1581);
+    			add_location(button3, file$1, 62, 0, 1676);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1936,11 +1986,11 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input, "input", /*input_input_handler*/ ctx[4]),
-    					listen_dev(button0, "click", /*castLots*/ ctx[3], false, false, false),
-    					listen_dev(button1, "click", /*click_handler*/ ctx[5], false, false, false),
-    					listen_dev(button2, "click", /*click_handler_1*/ ctx[6], false, false, false),
-    					listen_dev(button3, "click", /*click_handler_2*/ ctx[7], false, false, false)
+    					listen_dev(input, "input", /*input_input_handler*/ ctx[5]),
+    					listen_dev(button0, "click", /*castLots*/ ctx[4], false, false, false),
+    					listen_dev(button1, "click", /*click_handler*/ ctx[6], false, false, false),
+    					listen_dev(button2, "click", /*click_handler_1*/ ctx[7], false, false, false),
+    					listen_dev(button3, "click", /*click_handler_2*/ ctx[8], false, false, false)
     				];
 
     				mounted = true;
@@ -2004,12 +2054,13 @@ var app = (function () {
     function instance$1($$self, $$props, $$invalidate) {
     	let $storeFE;
     	validate_store(storeFE, 'storeFE');
-    	component_subscribe($$self, storeFE, $$value => $$invalidate(8, $storeFE = $$value));
+    	component_subscribe($$self, storeFE, $$value => $$invalidate(9, $storeFE = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Gacha', slots, []);
     	let price = 550;
     	let isCasted = false;
     	let res = { c: 0, r: 0.0, g: 0.0, y: 0.0, menu: [] };
+    	let tweetText = "";
 
     	function castLots() {
     		let len = $storeFE.length;
@@ -2042,6 +2093,15 @@ var app = (function () {
     			}
     		}
 
+    		$$invalidate(3, tweetText = "生協食堂");
+    		$$invalidate(3, tweetText += price);
+    		$$invalidate(3, tweetText += "円ガチャで%0D%0A");
+
+    		for (const x of res.menu) {
+    			$$invalidate(3, tweetText += "『" + x + "』%0D%0A");
+    		}
+
+    		$$invalidate(3, tweetText += "が出ました！%0D%0A");
     		$$invalidate(1, isCasted = true);
     	}
 
@@ -2076,6 +2136,7 @@ var app = (function () {
     		price,
     		isCasted,
     		res,
+    		tweetText,
     		castLots,
     		$storeFE
     	});
@@ -2084,6 +2145,7 @@ var app = (function () {
     		if ('price' in $$props) $$invalidate(0, price = $$props.price);
     		if ('isCasted' in $$props) $$invalidate(1, isCasted = $$props.isCasted);
     		if ('res' in $$props) $$invalidate(2, res = $$props.res);
+    		if ('tweetText' in $$props) $$invalidate(3, tweetText = $$props.tweetText);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -2094,6 +2156,7 @@ var app = (function () {
     		price,
     		isCasted,
     		res,
+    		tweetText,
     		castLots,
     		input_input_handler,
     		click_handler,

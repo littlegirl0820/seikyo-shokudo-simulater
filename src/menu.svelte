@@ -33,39 +33,48 @@
 <div class="items">
     <h2>@館下食堂</h2>
     <h2>選択した商品の合計点数と値段を表示します</h2>
-    <ul>
+    <label for="expansion">展開</label>
+    <input
+        type="checkbox"
+        id="expansion"
+        class="accordion"
+        style="display:none;"
+    />
+    <ul id="link">
         {#each $storeFE as item}
             <div on:change={changeSum}>
-                <input type="checkbox" bind:checked={item.selected} />
-                <input
-                    placeholder="商品名"
-                    bind:value={item.name}
-                    class="item"
-                />
-                <br />
-                赤
-                <input
-                    type="number"
-                    step="0.1"
-                    bind:value={item.red}
-                    class="red"
-                />
-                緑
-                <input
-                    type="number"
-                    step="0.1"
-                    bind:value={item.green}
-                    class="green"
-                />
-                黄
-                <input
-                    type="number"
-                    step="0.1"
-                    bind:value={item.yellow}
-                    class="yellow"
-                />
-                値段 <input type="number" bind:value={item.cost} />円
-                <svelte:component this={Item} objAttributes={item} />
+                <li>
+                    <input type="checkbox" bind:checked={item.selected} />
+                    <input
+                        placeholder="商品名"
+                        bind:value={item.name}
+                        class="item"
+                    />
+                    <br />
+                    赤
+                    <input
+                        type="number"
+                        step="0.1"
+                        bind:value={item.red}
+                        class="red"
+                    />
+                    緑
+                    <input
+                        type="number"
+                        step="0.1"
+                        bind:value={item.green}
+                        class="green"
+                    />
+                    黄
+                    <input
+                        type="number"
+                        step="0.1"
+                        bind:value={item.yellow}
+                        class="yellow"
+                    />
+                    値段 <input type="number" bind:value={item.cost} />円
+                    <svelte:component this={Item} objAttributes={item} />
+                </li>
             </div>
         {/each}
     </ul>
@@ -96,5 +105,41 @@
     }
     input.yellow {
         background-color: rgb(255, 248, 177);
+    }
+
+    label {
+        /* width: 15%; */
+        display: block;
+        margin: 0;
+        padding: 15px;
+        line-height: 1;
+        color: #fff;
+        background: tomato;
+        cursor: pointer;
+        border-radius: 1em;
+        text-align: center;
+    }
+
+    .items ul {
+        width: 100%;
+        margin: 0px 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+    }
+
+    .items li {
+        height: 0;
+        overflow: hidden;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+    #expansion:checked ~ #link li {
+        height: 6.5em;
+        opacity: 1;
     }
 </style>
