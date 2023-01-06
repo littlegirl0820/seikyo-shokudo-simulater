@@ -1,12 +1,11 @@
 <script>
-    import { storeFE } from "./store.js";
-
     let price = 550;
     let isCasted = false;
     let res = { c: 0, r: 0.0, g: 0.0, y: 0.0, menu: [] };
     let tweetText = "";
+    export let menuList = [];
     function castLots() {
-        let len = $storeFE.length;
+        let len = menuList.length;
         let seq = [];
         for (let i = 0; i < len; i++) seq.push(i);
         let swapNum = 1000;
@@ -22,14 +21,13 @@
         res.menu = [];
         let cur = price;
         for (const x of seq) {
-            console.log(x);
-            if ($storeFE[x].cost <= cur) {
-                cur -= $storeFE[x].cost;
-                res.c += $storeFE[x].cost;
-                res.r += $storeFE[x].red;
-                res.g += $storeFE[x].green;
-                res.y += $storeFE[x].yellow;
-                res.menu.push($storeFE[x].name);
+            if (menuList[x].cost <= cur) {
+                cur -= menuList[x].cost;
+                res.c += menuList[x].cost;
+                res.r += menuList[x].red;
+                res.g += menuList[x].green;
+                res.y += menuList[x].yellow;
+                res.menu.push(menuList[x].name);
             }
         }
         tweetText = "生協食堂";
@@ -45,6 +43,7 @@
 
 <h2>生協食堂ガチャ</h2>
 <h3>指定した金額分ランダムなメニューを提示します．</h3>
+<h3>曜日関係なくセットメニューも提示します．</h3>
 <input type="number" bind:value={price} />円<br />
 
 <button on:click={castLots}>ガチャ！</button>

@@ -16,13 +16,14 @@ for URL in URL_List:
     tmp += soup.find_all("span", {"class": "en"})
     res = []
     for idx, x in enumerate(tmp):
-        y = re.sub('\<.+?\>', '', str(x))
+        y = re.sub('\<span.+?\span>', '', str(x))
+        y = re.sub('\<.+?\>', '', str(y))
         res.append(y)
         # print(y)
     print("{")
     print("selected: false,")
     print("id: "+str(cnt)+",")
-    print("name:\""+re.sub(r'[a-zA-Z]|\(|\)| |-', '', res[1])+'\",')
+    print("name:\""+re.sub(r'[a-zA-Z]|\(|\)| |-|\+|，', '', res[1])+'\",')
     print(res[19].lower()+",")
     print(res[20].lower()+",")
     print(res[21].lower()+",")

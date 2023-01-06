@@ -1,9 +1,11 @@
 <script>
-    import { storeFE, idIncrement, sum } from "./store.js";
+    import { idIncrement, sum } from "./store.js";
     import Item from "./item.svelte";
+    export let state = 0;
+    export let menuList = [];
     function addItem() {
-        var l = $storeFE.length;
-        $storeFE[l] = {
+        var l = menuList.length;
+        menuList[l] = {
             selected: false,
             id: $idIncrement,
             name: "",
@@ -19,7 +21,7 @@
         $sum.red = 0.0;
         $sum.green = 0.0;
         $sum.yellow = 0.0;
-        $storeFE.forEach((item) => {
+        menuList.forEach((item) => {
             if (item.selected) {
                 $sum.cost += item.cost;
                 $sum.red += item.red;
@@ -31,7 +33,13 @@
 </script>
 
 <div class="items">
-    <h2>@館下食堂</h2>
+    <h2>
+        {#if state === 0}
+            @館下食堂
+        {:else if state === 1}
+            @ファミール
+        {/if}
+    </h2>
     <h2>選択した商品の合計点数と値段を表示します</h2>
     <label for="expansion">展開</label>
     <input
@@ -41,7 +49,7 @@
         style="display:none;"
     />
     <ul id="link">
-        {#each $storeFE as item}
+        {#each menuList as item}
             <div on:change={changeSum}>
                 <li>
                     <input type="checkbox" bind:checked={item.selected} />
@@ -73,7 +81,11 @@
                         class="yellow"
                     />
                     値段 <input type="number" bind:value={item.cost} />円
-                    <svelte:component this={Item} objAttributes={item} />
+                    <svelte:component
+                        this={Item}
+                        objAttributes={item}
+                        {state}
+                    />
                 </li>
             </div>
         {/each}

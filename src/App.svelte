@@ -1,9 +1,9 @@
 <script>
-	import { storeFE, idIncrement, sum } from "./store.js";
+	import { menuKanshita, menuFamiru, idIncrement, sum } from "./store.js";
 	import Optimize from "./optimize.svelte";
 	import Menu from "./menu.svelte";
 	import Gacha from "./gacha.svelte";
-	$storeFE = [
+	$menuKanshita = [
 		{
 			selected: false,
 			id: 0,
@@ -302,19 +302,493 @@
 			cost: 95,
 		},
 	];
-	idIncrement.set($storeFE.length);
+	$menuFamiru = [
+		{
+			selected: false,
+			id: 0,
+			name: "ローストンカツおろしソース",
+			red: 1.8,
+			green: 0.0,
+			yellow: 3.3,
+			cost: 264,
+		},
+		{
+			selected: false,
+			id: 1,
+			name: "チキンカツ柚子胡椒マヨ",
+			red: 1.3,
+			green: 0.0,
+			yellow: 4.0,
+			cost: 220,
+		},
+		{
+			selected: false,
+			id: 2,
+			name: "ハンバーグトマトソース",
+			red: 1.5,
+			green: 0.1,
+			yellow: 1.1,
+			cost: 220,
+		},
+		{
+			selected: false,
+			id: 3,
+			name: "豚ブロッコリー和風炒め",
+			red: 1.4,
+			green: 0.8,
+			yellow: 1.4,
+			cost: 264,
+		},
+		{
+			selected: false,
+			id: 4,
+			name: "ビーフシチュー",
+			red: 1.9,
+			green: 1.2,
+			yellow: 0.8,
+			cost: 264,
+		},
+		{
+			selected: false,
+			id: 5,
+			name: "白身魚フライ",
+			red: 0.5,
+			green: 0.0,
+			yellow: 6.0,
+			cost: 220,
+		},
+		{
+			selected: false,
+			id: 6,
+			name: "ししゃもフライ",
+			red: 0.7,
+			green: 0.0,
+			yellow: 1.0,
+			cost: 176,
+		},
+		{
+			selected: false,
+			id: 7,
+			name: "鯖味噌煮",
+			red: 1.8,
+			green: 0.0,
+			yellow: 0.4,
+			cost: 176,
+		},
+		{
+			selected: false,
+			id: 8,
+			name: "ビタミンＣサラダ",
+			red: 0.0,
+			green: 0.9,
+			yellow: 0.6,
+			cost: 110,
+		},
+		{
+			selected: false,
+			id: 9,
+			name: "ちくわの磯部揚げ",
+			red: 0.5,
+			green: 0.0,
+			yellow: 1.3,
+			cost: 110,
+		},
+		{
+			selected: false,
+			id: 10,
+			name: "鶏きも煮",
+			red: 0.6,
+			green: 0.0,
+			yellow: 0.2,
+			cost: 88,
+		},
+		{
+			selected: false,
+			id: 11,
+			name: "オクラ巣ごもり玉子",
+			red: 1.0,
+			green: 0.1,
+			yellow: 0.1,
+			cost: 88,
+		},
+		{
+			selected: false,
+			id: 12,
+			name: "ほうれん草ひじき和え",
+			red: 0.5,
+			green: 0.1,
+			yellow: 0.2,
+			cost: 88,
+		},
+		{
+			selected: false,
+			id: 13,
+			name: "小松菜わさび和え",
+			red: 0.1,
+			green: 0.1,
+			yellow: 0.2,
+			cost: 88,
+		},
+		{
+			selected: false,
+			id: 14,
+			name: "ブロッコリーピーナッツ和え",
+			red: 0.0,
+			green: 0.3,
+			yellow: 0.3,
+			cost: 88,
+		},
+		{
+			selected: false,
+			id: 15,
+			name: "ほうれん草",
+			red: 0.0,
+			green: 0.2,
+			yellow: 0.0,
+			cost: 66,
+		},
+		{
+			selected: false,
+			id: 16,
+			name: "だし巻き",
+			red: 1.1,
+			green: 0.0,
+			yellow: 0.2,
+			cost: 66,
+		},
+		{
+			selected: false,
+			id: 17,
+			name: "きんぴらごぼう",
+			red: 0.0,
+			green: 0.3,
+			yellow: 0.3,
+			cost: 66,
+		},
+		{
+			selected: false,
+			id: 18,
+			name: "スライスオクラ",
+			red: 0.0,
+			green: 0.2,
+			yellow: 0.0,
+			cost: 66,
+		},
+		{
+			selected: false,
+			id: 19,
+			name: "冷奴",
+			red: 0.6,
+			green: 0.0,
+			yellow: 0.0,
+			cost: 44,
+		},
+		{
+			selected: false,
+			id: 20,
+			name: "温泉玉子",
+			red: 1.0,
+			green: 0.0,
+			yellow: 0.0,
+			cost: 44,
+		},
+		{
+			selected: false,
+			id: 21,
+			name: "ミニサラダ",
+			red: 0.0,
+			green: 0.1,
+			yellow: 0.0,
+			cost: 44,
+		},
+		{
+			selected: false,
+			id: 22,
+			name: "豚汁",
+			red: 0.6,
+			green: 0.4,
+			yellow: 0.4,
+			cost: 110,
+		},
+		{
+			selected: false,
+			id: 23,
+			name: "味噌汁",
+			red: 0.4,
+			green: 0.0,
+			yellow: 0.3,
+			cost: 33,
+		},
+		{
+			selected: false,
+			id: 24,
+			name: "温玉ぶっかけうどん",
+			red: 1.0,
+			green: 0.0,
+			yellow: 4.2,
+			cost: 297,
+		},
+		{
+			selected: false,
+			id: 25,
+			name: "温玉ぶっかけそば",
+			red: 1.0,
+			green: 0.0,
+			yellow: 3.8,
+			cost: 297,
+		},
+		{
+			selected: false,
+			id: 26,
+			name: "きつねうどん",
+			red: 0.9,
+			green: 0.0,
+			yellow: 4.6,
+			cost: 297,
+		},
+		{
+			selected: false,
+			id: 27,
+			name: "きつねそば",
+			red: 0.9,
+			green: 0.0,
+			yellow: 4.2,
+			cost: 297,
+		},
+		{
+			selected: false,
+			id: 28,
+			name: "かけうどん",
+			red: 0.0,
+			green: 0.0,
+			yellow: 4.2,
+			cost: 209,
+		},
+		{
+			selected: false,
+			id: 29,
+			name: "かけそば",
+			red: 0.0,
+			green: 0.0,
+			yellow: 3.8,
+			cost: 209,
+		},
+		{
+			selected: false,
+			id: 30,
+			name: "豚骨ラーメン",
+			red: 0.6,
+			green: 0.1,
+			yellow: 5.3,
+			cost: 385,
+		},
+		{
+			selected: false,
+			id: 31,
+			name: "トンカツ茶漬け丼",
+			red: 1.4,
+			green: 0.0,
+			yellow: 6.1,
+			cost: 407,
+		},
+		{
+			selected: false,
+			id: 32,
+			name: "豚塩カルビ丼",
+			red: 2.0,
+			green: 0.2,
+			yellow: 5.4,
+			cost: 407,
+		},
+		{
+			selected: false,
+			id: 33,
+			name: "ロースカツカレー",
+			red: 1.6,
+			green: 0.3,
+			yellow: 9.1,
+			cost: 407,
+		},
+		{
+			selected: false,
+			id: 34,
+			name: "カレーライス",
+			red: 0.2,
+			green: 0.3,
+			yellow: 7.0,
+			cost: 308,
+		},
+		{
+			selected: false,
+			id: 35,
+			name: "ライス",
+			red: 0.0,
+			green: 0.0,
+			yellow: 5.1,
+			cost: 115,
+		},
+		{
+			selected: false,
+			id: 36,
+			name: "豚ニンニクの芽炒め定食（小鉢1品付）",
+			red: 2.6,
+			green: 0.8,
+			yellow: 5.4,
+			cost: 450,
+		},
+		{
+			selected: false,
+			id: 37,
+			name: "すき煮定食（小鉢1品付）",
+			red: 4.0,
+			green: 0.2,
+			yellow: 4.2,
+			cost: 500,
+		},
+		{
+			selected: false,
+			id: 38,
+			name: "味噌カツ丼定食（小鉢1品付）【】",
+			red: 1.8,
+			green: 0.1,
+			yellow: 8.4,
+			cost: 500,
+		},
+		{
+			selected: false,
+			id: 39,
+			name: "ササミチーズカツ定食（小鉢1品【】【月曜日】",
+			red: 1.3,
+			green: 0.1,
+			yellow: 8.5,
+			cost: 450,
+		},
+		{
+			selected: false,
+			id: 40,
+			name: "蒸し鶏ベジトマ定食（小鉢1品付）【水曜日】",
+			red: 4.9,
+			green: 0.3,
+			yellow: 4.1,
+			cost: 500,
+		},
+		{
+			selected: false,
+			id: 41,
+			name: "ビビンバ丼定食（小鉢1品付）【】",
+			red: 1.4,
+			green: 0.2,
+			yellow: 6.2,
+			cost: 500,
+		},
+		{
+			selected: false,
+			id: 42,
+			name: "ハンバーグペッパーソース定食（小鉢1品付）【水曜日】",
+			red: 1.9,
+			green: 0.2,
+			yellow: 5.1,
+			cost: 450,
+		},
+		{
+			selected: false,
+			id: 43,
+			name: "油淋鶏定食（小鉢1品付）【火曜日】",
+			red: 4.9,
+			green: 0.2,
+			yellow: 6.0,
+			cost: 500,
+		},
+		{
+			selected: false,
+			id: 44,
+			name: "チキンカツサラダ丼定食（小鉢1品付）【】",
+			red: 1.6,
+			green: 0.2,
+			yellow: 9.5,
+			cost: 500,
+		},
+		{
+			selected: false,
+			id: 45,
+			name: "チキン香草焼き定食（小鉢1品付）【火曜日】",
+			red: 2.6,
+			green: 0.1,
+			yellow: 4.1,
+			cost: 500,
+		},
+		{
+			selected: false,
+			id: 46,
+			name: "きのこんそぼろ丼定食（小鉢1品付）【】",
+			red: 2.3,
+			green: 0.2,
+			yellow: 6.4,
+			cost: 500,
+		},
+		{
+			selected: false,
+			id: 47,
+			name: "餃子野菜あんかけ定食（小鉢1品付）【水曜日】",
+			red: 0.6,
+			green: 0.4,
+			yellow: 7.8,
+			cost: 450,
+		},
+		{
+			selected: false,
+			id: 48,
+			name: "トンカツごまソース定食（小鉢1品付）",
+			red: 2.2,
+			green: 0.1,
+			yellow: 7.6,
+			cost: 500,
+		},
+		{
+			selected: false,
+			id: 49,
+			name: "チキンチゲチーズ丼定食（小鉢1品付）【】",
+			red: 2.6,
+			green: 0.1,
+			yellow: 5.9,
+			cost: 500,
+		},
+	];
+	idIncrement.set($menuKanshita.length);
 	$sum = { cost: 0, red: 0.0, green: 0.0, yellow: 0.0 };
+	let state = 0;
 </script>
 
 <h1>生協食堂シミュレータ(β)</h1>
 <h3>最終更新 2023/01/05</h3>
-<hr />
-<Menu />
-<hr />
-<Optimize />
-<hr />
-<Gacha />
-<hr />
+<h3>
+	このサイトは非公式です．最新のメニューは<a
+		href="https://west2-univ.jp/sp/osaka-univ.php"
+		target="_blank"
+		rel="noreferrer">こちら</a
+	>を確認してください．
+</h3>
+<button on:click={() => (state = 0)}>館下食堂</button>
+<button on:click={() => (state = 1)}>ファミール</button>
+<button on:click={() => (state = 2)}>かさね</button>
+<button on:click={() => (state = 3)}>レインボー</button>
+{#if state === 0}
+	<hr />
+	<Menu {state} menuList={$menuKanshita} />
+	<hr />
+	<Optimize menuList={$menuKanshita} />
+	<hr />
+	<Gacha menuList={$menuKanshita} />
+	<hr />
+{:else if state === 1}
+	<hr />
+	<Menu {state} menuList={$menuFamiru} />
+	<hr />
+	<Optimize menuList={$menuFamiru} />
+	<hr />
+	<Gacha menuList={$menuFamiru} />
+	<hr />
+{/if}
 
 <style>
 </style>

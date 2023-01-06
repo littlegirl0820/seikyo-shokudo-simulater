@@ -3,10 +3,10 @@
     let dpFlag = false;
     let res = { r: 0, g: 0, y: 0, cost: 0, menu: [] };
     let dp = [];
-    import { storeFE } from "./store.js";
+    export let menuList = [];
 
     function calcScore() {
-        let len = $storeFE.length;
+        let len = menuList.length;
         let r = Math.round(Math.min(score.red, 10.0) * 10);
         let g = Math.round(Math.min(score.green, 5.0) * 10);
         let y = Math.round(Math.min(score.yellow, 10.0) * 10);
@@ -19,10 +19,10 @@
         dp[0][0][0][0] = 0;
         for (let i = 1; i <= len; i++) {
             let cur = {
-                c: $storeFE[i - 1].cost,
-                r: Math.round($storeFE[i - 1].red * 10),
-                g: Math.round($storeFE[i - 1].green * 10),
-                y: Math.round($storeFE[i - 1].yellow * 10),
+                c: menuList[i - 1].cost,
+                r: Math.round(menuList[i - 1].red * 10),
+                g: Math.round(menuList[i - 1].green * 10),
+                y: Math.round(menuList[i - 1].yellow * 10),
             };
             for (let j = 0; j <= r; j++) {
                 for (let k = 0; k <= g; k++) {
@@ -71,11 +71,11 @@
         res.menu = [];
         for (let i = len; i >= 1; i--) {
             let cur = {
-                m: $storeFE[i - 1].name,
-                c: $storeFE[i - 1].cost,
-                r: Math.round($storeFE[i - 1].red * 10),
-                g: Math.round($storeFE[i - 1].green * 10),
-                y: Math.round($storeFE[i - 1].yellow * 10),
+                m: menuList[i - 1].name,
+                c: menuList[i - 1].cost,
+                r: Math.round(menuList[i - 1].red * 10),
+                g: Math.round(menuList[i - 1].green * 10),
+                y: Math.round(menuList[i - 1].yellow * 10),
             };
             let isFound = false;
             for (let j = r; j >= 0; j--) {
@@ -90,8 +90,6 @@
                             K === tmp.g &&
                             L === tmp.y
                         ) {
-                            console.log(i, j, k, l);
-                            console.log(tmp);
                             res.menu.push(cur.m);
                             res.r += cur.r / 10;
                             res.g += cur.g / 10;
