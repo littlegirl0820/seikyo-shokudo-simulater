@@ -42,6 +42,7 @@
                     bind:value={item.name}
                     class="item"
                 />
+                <br />
                 赤
                 <input
                     type="number"

@@ -54,9 +54,9 @@
 >
 <button
     on:click={() => {
-        price = 1500;
+        price = 1100;
         castLots();
-    }}>1500円</button
+    }}>1100円</button
 >
 {#if isCasted}
     <h3>
