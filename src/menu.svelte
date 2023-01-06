@@ -1,6 +1,6 @@
 <script>
     import { storeFE, idIncrement, sum } from "./store.js";
-    import Item from "./Item.svelte";
+    import Item from "./item.svelte";
     function addItem() {
         var l = $storeFE.length;
         $storeFE[l] = {
