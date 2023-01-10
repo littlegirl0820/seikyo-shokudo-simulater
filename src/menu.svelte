@@ -84,6 +84,7 @@
                         bind:value={item.yellow}
                         class="yellow"
                     />
+                    <br />
                     値段 <input type="number" bind:value={item.cost} />円
                     <svelte:component
                         this={Item}
@@ -155,7 +156,7 @@
     }
 
     #expansion:checked ~ #link li {
-        height: 6.5em;
+        height: 8em;
         opacity: 1;
     }
 </style>
