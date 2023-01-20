@@ -37,6 +37,7 @@
             tweetText += "『" + x + "』%0D%0A";
         }
         tweetText += "が出ました！%0D%0A";
+        tweetText += "%23生協食堂ガチャ %0D%0A";
         isCasted = true;
     }
 </script>

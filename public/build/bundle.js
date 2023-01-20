@@ -1949,11 +1949,11 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[10] = list[i];
+    	child_ctx[11] = list[i];
     	return child_ctx;
     }
 
-    // (68:0) {#if isCasted}
+    // (75:0) {#if isCasted}
     function create_if_block$1(ctx) {
     	let h3;
     	let t0_value = /*res*/ ctx[2].c + "";
@@ -2001,12 +2001,12 @@ var app = (function () {
     			t9 = space();
     			a = element("a");
     			t10 = text("ツイートする");
-    			add_location(h3, file$1, 68, 4, 1779);
+    			add_location(h3, file$1, 75, 4, 1914);
     			attr_dev(a, "href", a_href_value = "https://twitter.com/share?url=https://seikyo-simulater.vercel.app/&text=" + /*tweetText*/ ctx[3]);
     			attr_dev(a, "rel", "noreferrer");
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "class", "twitter-share-button svelte-1nxsy32");
-    			add_location(a, file$1, 81, 4, 2044);
+    			add_location(a, file$1, 88, 4, 2179);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h3, anchor);
@@ -2075,18 +2075,18 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(68:0) {#if isCasted}",
+    		source: "(75:0) {#if isCasted}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (75:4) {#each res.menu as menu}
+    // (82:4) {#each res.menu as menu}
     function create_each_block(ctx) {
     	let div;
     	let li;
-    	let t_value = /*menu*/ ctx[10] + "";
+    	let t_value = /*menu*/ ctx[11] + "";
     	let t;
 
     	const block = {
@@ -2094,9 +2094,9 @@ var app = (function () {
     			div = element("div");
     			li = element("li");
     			t = text(t_value);
-    			add_location(li, file$1, 76, 12, 1967);
+    			add_location(li, file$1, 83, 12, 2102);
     			attr_dev(div, "class", "res svelte-1nxsy32");
-    			add_location(div, file$1, 75, 8, 1937);
+    			add_location(div, file$1, 82, 8, 2072);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -2104,7 +2104,7 @@ var app = (function () {
     			append_dev(li, t);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*res*/ 4 && t_value !== (t_value = /*menu*/ ctx[10] + "")) set_data_dev(t, t_value);
+    			if (dirty & /*res*/ 4 && t_value !== (t_value = /*menu*/ ctx[11] + "")) set_data_dev(t, t_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -2115,7 +2115,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(75:4) {#each res.menu as menu}",
+    		source: "(82:4) {#each res.menu as menu}",
     		ctx
     	});
 
@@ -2141,6 +2141,8 @@ var app = (function () {
     	let t13;
     	let button3;
     	let t15;
+    	let button4;
+    	let t17;
     	let if_block_anchor;
     	let mounted;
     	let dispose;
@@ -2168,23 +2170,27 @@ var app = (function () {
     			button1.textContent = "550円";
     			t11 = space();
     			button2 = element("button");
-    			button2.textContent = "1000円";
+    			button2.textContent = "650円";
     			t13 = space();
     			button3 = element("button");
-    			button3.textContent = "1100円";
+    			button3.textContent = "1000円";
     			t15 = space();
+    			button4 = element("button");
+    			button4.textContent = "1100円";
+    			t17 = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
-    			add_location(h2, file$1, 43, 0, 1304);
-    			add_location(h30, file$1, 44, 0, 1321);
-    			add_location(h31, file$1, 45, 0, 1354);
+    			add_location(h2, file$1, 44, 0, 1346);
+    			add_location(h30, file$1, 45, 0, 1363);
+    			add_location(h31, file$1, 46, 0, 1396);
     			attr_dev(input, "type", "number");
-    			add_location(input, file$1, 46, 0, 1384);
-    			add_location(br, file$1, 46, 43, 1427);
-    			add_location(button0, file$1, 48, 0, 1435);
-    			add_location(button1, file$1, 49, 0, 1477);
-    			add_location(button2, file$1, 55, 0, 1570);
-    			add_location(button3, file$1, 61, 0, 1665);
+    			add_location(input, file$1, 47, 0, 1426);
+    			add_location(br, file$1, 47, 43, 1469);
+    			add_location(button0, file$1, 49, 0, 1477);
+    			add_location(button1, file$1, 50, 0, 1519);
+    			add_location(button2, file$1, 56, 0, 1612);
+    			add_location(button3, file$1, 62, 0, 1705);
+    			add_location(button4, file$1, 68, 0, 1800);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2209,6 +2215,8 @@ var app = (function () {
     			insert_dev(target, t13, anchor);
     			insert_dev(target, button3, anchor);
     			insert_dev(target, t15, anchor);
+    			insert_dev(target, button4, anchor);
+    			insert_dev(target, t17, anchor);
     			if (if_block) if_block.m(target, anchor);
     			insert_dev(target, if_block_anchor, anchor);
 
@@ -2218,7 +2226,8 @@ var app = (function () {
     					listen_dev(button0, "click", /*castLots*/ ctx[4], false, false, false),
     					listen_dev(button1, "click", /*click_handler*/ ctx[7], false, false, false),
     					listen_dev(button2, "click", /*click_handler_1*/ ctx[8], false, false, false),
-    					listen_dev(button3, "click", /*click_handler_2*/ ctx[9], false, false, false)
+    					listen_dev(button3, "click", /*click_handler_2*/ ctx[9], false, false, false),
+    					listen_dev(button4, "click", /*click_handler_3*/ ctx[10], false, false, false)
     				];
 
     				mounted = true;
@@ -2263,6 +2272,8 @@ var app = (function () {
     			if (detaching) detach_dev(t13);
     			if (detaching) detach_dev(button3);
     			if (detaching) detach_dev(t15);
+    			if (detaching) detach_dev(button4);
+    			if (detaching) detach_dev(t17);
     			if (if_block) if_block.d(detaching);
     			if (detaching) detach_dev(if_block_anchor);
     			mounted = false;
@@ -2328,6 +2339,7 @@ var app = (function () {
     		}
 
     		$$invalidate(3, tweetText += "が出ました！%0D%0A");
+    		$$invalidate(3, tweetText += "%23生協食堂ガチャ %0D%0A");
     		$$invalidate(1, isCasted = true);
     	}
 
@@ -2348,11 +2360,16 @@ var app = (function () {
     	};
 
     	const click_handler_1 = () => {
-    		$$invalidate(0, price = 1000);
+    		$$invalidate(0, price = 650);
     		castLots();
     	};
 
     	const click_handler_2 = () => {
+    		$$invalidate(0, price = 1000);
+    		castLots();
+    	};
+
+    	const click_handler_3 = () => {
     		$$invalidate(0, price = 1100);
     		castLots();
     	};
@@ -2392,7 +2409,8 @@ var app = (function () {
     		input_input_handler,
     		click_handler,
     		click_handler_1,
-    		click_handler_2
+    		click_handler_2,
+    		click_handler_3
     	];
     }
 
@@ -2421,7 +2439,7 @@ var app = (function () {
     /* src\App.svelte generated by Svelte v3.54.0 */
     const file = "src\\App.svelte";
 
-    // (1178:22) 
+    // (1007:22) 
     function create_if_block_3(ctx) {
     	let hr0;
     	let t0;
@@ -2471,10 +2489,10 @@ var app = (function () {
     			create_component(gacha.$$.fragment);
     			t5 = space();
     			hr3 = element("hr");
-    			add_location(hr0, file, 1178, 1, 16114);
-    			add_location(hr1, file, 1180, 1, 16164);
-    			add_location(hr2, file, 1182, 1, 16210);
-    			add_location(hr3, file, 1184, 1, 16253);
+    			add_location(hr0, file, 1007, 1, 13759);
+    			add_location(hr1, file, 1009, 1, 13809);
+    			add_location(hr2, file, 1011, 1, 13855);
+    			add_location(hr3, file, 1013, 1, 13898);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, hr0, anchor);
@@ -2538,14 +2556,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(1178:22) ",
+    		source: "(1007:22) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1170:22) 
+    // (999:22) 
     function create_if_block_2(ctx) {
     	let hr0;
     	let t0;
@@ -2595,10 +2613,10 @@ var app = (function () {
     			create_component(gacha.$$.fragment);
     			t5 = space();
     			hr3 = element("hr");
-    			add_location(hr0, file, 1170, 1, 15947);
-    			add_location(hr1, file, 1172, 1, 15996);
-    			add_location(hr2, file, 1174, 1, 16041);
-    			add_location(hr3, file, 1176, 1, 16083);
+    			add_location(hr0, file, 999, 1, 13592);
+    			add_location(hr1, file, 1001, 1, 13641);
+    			add_location(hr2, file, 1003, 1, 13686);
+    			add_location(hr3, file, 1005, 1, 13728);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, hr0, anchor);
@@ -2662,14 +2680,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(1170:22) ",
+    		source: "(999:22) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1162:22) 
+    // (991:22) 
     function create_if_block_1(ctx) {
     	let hr0;
     	let t0;
@@ -2719,10 +2737,10 @@ var app = (function () {
     			create_component(gacha.$$.fragment);
     			t5 = space();
     			hr3 = element("hr");
-    			add_location(hr0, file, 1162, 1, 15780);
-    			add_location(hr1, file, 1164, 1, 15829);
-    			add_location(hr2, file, 1166, 1, 15874);
-    			add_location(hr3, file, 1168, 1, 15916);
+    			add_location(hr0, file, 991, 1, 13425);
+    			add_location(hr1, file, 993, 1, 13474);
+    			add_location(hr2, file, 995, 1, 13519);
+    			add_location(hr3, file, 997, 1, 13561);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, hr0, anchor);
@@ -2786,14 +2804,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(1162:22) ",
+    		source: "(991:22) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (1154:0) {#if state === 0}
+    // (983:0) {#if state === 0}
     function create_if_block(ctx) {
     	let hr0;
     	let t0;
@@ -2843,10 +2861,10 @@ var app = (function () {
     			create_component(gacha.$$.fragment);
     			t5 = space();
     			hr3 = element("hr");
-    			add_location(hr0, file, 1154, 1, 15607);
-    			add_location(hr1, file, 1156, 1, 15658);
-    			add_location(hr2, file, 1158, 1, 15705);
-    			add_location(hr3, file, 1160, 1, 15749);
+    			add_location(hr0, file, 983, 1, 13252);
+    			add_location(hr1, file, 985, 1, 13303);
+    			add_location(hr2, file, 987, 1, 13350);
+    			add_location(hr3, file, 989, 1, 13394);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, hr0, anchor);
@@ -2910,7 +2928,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(1154:0) {#if state === 0}",
+    		source: "(983:0) {#if state === 0}",
     		ctx
     	});
 
@@ -2960,7 +2978,7 @@ var app = (function () {
     			h1.textContent = "生協食堂シミュレータ(β)";
     			t1 = space();
     			h30 = element("h3");
-    			h30.textContent = "最終更新 2023/01/10";
+    			h30.textContent = "最終更新 2023/01/20";
     			t3 = space();
     			h31 = element("h3");
     			t4 = text("このサイトは非公式です．最新のメニューは");
@@ -2979,16 +2997,16 @@ var app = (function () {
     			t13 = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty();
-    			add_location(h1, file, 1140, 0, 15185);
-    			add_location(h30, file, 1141, 0, 15208);
+    			add_location(h1, file, 969, 0, 12830);
+    			add_location(h30, file, 970, 0, 12853);
     			attr_dev(a, "href", "https://west2-univ.jp/sp/osaka-univ.php");
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noreferrer");
-    			add_location(a, file, 1143, 21, 15259);
-    			add_location(h31, file, 1142, 0, 15233);
-    			add_location(button0, file, 1149, 0, 15374);
-    			add_location(button1, file, 1150, 0, 15425);
-    			add_location(button2, file, 1151, 0, 15477);
+    			add_location(a, file, 972, 21, 12904);
+    			add_location(h31, file, 971, 0, 12878);
+    			add_location(button0, file, 978, 0, 13019);
+    			add_location(button1, file, 979, 0, 13070);
+    			add_location(button2, file, 980, 0, 13122);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -3132,82 +3150,82 @@ var app = (function () {
     			{
     				selected: false,
     				id: 0,
-    				name: "ジューシー唐揚げ",
-    				red: 2.7,
+    				name: "チキン甘辛ステーキ",
+    				red: 3.1,
     				green: 0.1,
-    				yellow: 2.2,
+    				yellow: 2.4,
     				cost: 352
     			},
     			{
     				selected: false,
     				id: 1,
-    				name: "ローストンカツ味噌ソース",
-    				red: 1.8,
-    				green: 0.1,
-    				yellow: 3.8,
-    				cost: 308
+    				name: "ポークミンチカツ",
+    				red: 1.5,
+    				green: 0.2,
+    				yellow: 3.1,
+    				cost: 264
     			},
     			{
     				selected: false,
     				id: 2,
-    				name: "ねぎ塩ハンバーグ",
+    				name: "ハンバーグペッパーソース",
     				red: 1.5,
-    				green: 0.3,
-    				yellow: 1.4,
+    				green: 0.2,
+    				yellow: 1.3,
     				cost: 264
     			},
     			{
     				selected: false,
     				id: 3,
-    				name: "豚と野菜の生姜炒め",
+    				name: "豚野菜柚子胡椒ポン酢炒め",
     				red: 1.4,
     				green: 0.7,
-    				yellow: 1.7,
+    				yellow: 1.3,
     				cost: 264
     			},
     			{
     				selected: false,
     				id: 4,
-    				name: "クラムチャウダー",
-    				red: 1.4,
-    				green: 1.1,
-    				yellow: 0.8,
+    				name: "チゲ豆腐",
+    				red: 2.5,
+    				green: 0.3,
+    				yellow: 0.7,
     				cost: 264
     			},
     			{
     				selected: false,
     				id: 5,
-    				name: "フライドチキン",
-    				red: 1.0,
+    				name: "ししゃもフライ",
+    				red: 0.7,
     				green: 0.0,
-    				yellow: 1.9,
+    				yellow: 1.0,
     				cost: 176
     			},
     			{
     				selected: false,
     				id: 6,
-    				name: "鯖生姜煮",
+    				name: "鯖味噌煮",
     				red: 1.8,
     				green: 0.0,
-    				yellow: 0.5,
+    				yellow: 0.4,
     				cost: 176
     			},
     			{
     				selected: false,
     				id: 7,
-    				name: "若布コーンサラダ",
-    				red: 0.0,
-    				green: 0.6,
-    				yellow: 0.0,
+    				name: "スパイスチキンサラダ",
+    				red: 0.2,
+    				green: 0.4,
+    				yellow: 0.1,
     				cost: 110
     			},
     			{
     				selected: false,
     				id: 8,
-    				name: "肉じゃがコロッケ",
-    				red: 0.1,
-    				green: 0.3,
-    				yellow: 2.7,
+    				name: "南瓜コロッケ",
+    				red: 0.0,
+    				green: 0.4,
+    				yellow: 2.3,
     				cost: 110
     			},
     			{
@@ -3231,37 +3249,37 @@ var app = (function () {
     			{
     				selected: false,
     				id: 11,
-    				name: "そぼろきんぴらごぼう",
-    				red: 0.5,
-    				green: 0.2,
-    				yellow: 0.4,
+    				name: "小松菜と揚げ生姜風味",
+    				red: 0.2,
+    				green: 0.1,
+    				yellow: 0.2,
     				cost: 88
     			},
     			{
     				selected: false,
     				id: 12,
-    				name: "オクラとひじきのマヨサラダ",
-    				red: 0.1,
-    				green: 0.3,
-    				yellow: 1.4,
+    				name: "ほうれん草ひじき和え",
+    				red: 0.5,
+    				green: 0.1,
+    				yellow: 0.2,
     				cost: 88
     			},
     			{
     				selected: false,
     				id: 13,
-    				name: "ほうれん草",
-    				red: 0.0,
-    				green: 0.2,
-    				yellow: 0.0,
+    				name: "千切り煮",
+    				red: 0.2,
+    				green: 0.1,
+    				yellow: 0.1,
     				cost: 66
     			},
     			{
     				selected: false,
     				id: 14,
-    				name: "南瓜サラダ",
+    				name: "ほうれん草",
     				red: 0.0,
-    				green: 0.4,
-    				yellow: 0.8,
+    				green: 0.2,
+    				yellow: 0.0,
     				cost: 66
     			},
     			{
@@ -3276,6 +3294,15 @@ var app = (function () {
     			{
     				selected: false,
     				id: 16,
+    				name: "千切り煮",
+    				red: 0.2,
+    				green: 0.1,
+    				yellow: 0.1,
+    				cost: 66
+    			},
+    			{
+    				selected: false,
+    				id: 17,
     				name: "納豆",
     				red: 0.7,
     				green: 0.0,
@@ -3284,7 +3311,16 @@ var app = (function () {
     			},
     			{
     				selected: false,
-    				id: 17,
+    				id: 18,
+    				name: "じゃこ大根おろし",
+    				red: 0.1,
+    				green: 0.1,
+    				yellow: 0.0,
+    				cost: 66
+    			},
+    			{
+    				selected: false,
+    				id: 19,
     				name: "豚汁",
     				red: 0.6,
     				green: 0.4,
@@ -3293,7 +3329,7 @@ var app = (function () {
     			},
     			{
     				selected: false,
-    				id: 18,
+    				id: 20,
     				name: "味噌汁",
     				red: 0.4,
     				green: 0.0,
@@ -3302,34 +3338,34 @@ var app = (function () {
     			},
     			{
     				selected: false,
-    				id: 19,
-    				name: "オクラとベーコンのサラダ",
-    				red: 0.7,
-    				green: 0.3,
-    				yellow: 0.0,
+    				id: 21,
+    				name: "温玉とペンネのサラダ",
+    				red: 1.0,
+    				green: 0.2,
+    				yellow: 1.1,
     				cost: 176
     			},
     			{
     				selected: false,
-    				id: 20,
-    				name: "かき揚げうどん",
-    				red: 0.0,
-    				green: 0.2,
-    				yellow: 5.6,
-    				cost: 297
-    			},
-    			{
-    				selected: false,
-    				id: 21,
-    				name: "かき揚げそば",
-    				red: 0.0,
-    				green: 0.2,
-    				yellow: 5.2,
-    				cost: 297
-    			},
-    			{
-    				selected: false,
     				id: 22,
+    				name: "きつねうどん",
+    				red: 0.9,
+    				green: 0.0,
+    				yellow: 4.6,
+    				cost: 297
+    			},
+    			{
+    				selected: false,
+    				id: 23,
+    				name: "きつねそば",
+    				red: 0.9,
+    				green: 0.0,
+    				yellow: 4.2,
+    				cost: 297
+    			},
+    			{
+    				selected: false,
+    				id: 24,
     				name: "かけうどん",
     				red: 0.0,
     				green: 0.0,
@@ -3338,7 +3374,7 @@ var app = (function () {
     			},
     			{
     				selected: false,
-    				id: 23,
+    				id: 25,
     				name: "かけそば",
     				red: 0.0,
     				green: 0.0,
@@ -3347,34 +3383,34 @@ var app = (function () {
     			},
     			{
     				selected: false,
-    				id: 24,
-    				name: "チキン塩ラーメン",
-    				red: 1.2,
-    				green: 0.1,
-    				yellow: 5.9,
-    				cost: 429
-    			},
-    			{
-    				selected: false,
-    				id: 25,
-    				name: "温玉ねぎとろ丼",
-    				red: 1.5,
-    				green: 0.1,
-    				yellow: 6.1,
-    				cost: 462
-    			},
-    			{
-    				selected: false,
     				id: 26,
-    				name: "チキンカツ南蛮丼",
-    				red: 1.3,
+    				name: "醤油ラーメン",
+    				red: 0.6,
     				green: 0.1,
-    				yellow: 10.2,
-    				cost: 407
+    				yellow: 5.4,
+    				cost: 385
     			},
     			{
     				selected: false,
     				id: 27,
+    				name: "ピリ辛サーモン丼",
+    				red: 1.5,
+    				green: 0.0,
+    				yellow: 5.6,
+    				cost: 462
+    			},
+    			{
+    				selected: false,
+    				id: 28,
+    				name: "塩だれカツ丼",
+    				red: 1.4,
+    				green: 0.1,
+    				yellow: 8.0,
+    				cost: 407
+    			},
+    			{
+    				selected: false,
+    				id: 29,
     				name: "ロースカツカレー",
     				red: 1.6,
     				green: 0.3,
@@ -3383,7 +3419,7 @@ var app = (function () {
     			},
     			{
     				selected: false,
-    				id: 28,
+    				id: 30,
     				name: "カレーライス",
     				red: 0.2,
     				green: 0.3,
@@ -3392,16 +3428,25 @@ var app = (function () {
     			},
     			{
     				selected: false,
-    				id: 29,
-    				name: "和栗モンブラン",
+    				id: 31,
+    				name: "ガトーショコラ",
     				red: 0.0,
     				green: 0.0,
-    				yellow: 2.5,
+    				yellow: 2.2,
     				cost: 220
     			},
     			{
     				selected: false,
-    				id: 30,
+    				id: 32,
+    				name: "あまおう苺のモンブラン",
+    				red: 0.0,
+    				green: 0.0,
+    				yellow: 2.6,
+    				cost: 220
+    			},
+    			{
+    				selected: false,
+    				id: 33,
     				name: "ベルギーワッフル",
     				red: 0.0,
     				green: 0.0,
@@ -3410,16 +3455,7 @@ var app = (function () {
     			},
     			{
     				selected: false,
-    				id: 31,
-    				name: "焼きプリンタルト",
-    				red: 0.0,
-    				green: 0.0,
-    				yellow: 1.5,
-    				cost: 66
-    			},
-    			{
-    				selected: false,
-    				id: 32,
+    				id: 34,
     				name: "大学芋",
     				red: 0.0,
     				green: 0.8,
@@ -3428,7 +3464,7 @@ var app = (function () {
     			},
     			{
     				selected: false,
-    				id: 33,
+    				id: 35,
     				name: "牛乳",
     				red: 1.7,
     				green: 0.0,
@@ -3437,12 +3473,21 @@ var app = (function () {
     			},
     			{
     				selected: false,
-    				id: 34,
+    				id: 36,
     				name: "大学生協コーヒー",
     				red: 1.2,
     				green: 0.0,
     				yellow: 0.6,
     				cost: 95
+    			},
+    			{
+    				selected: false,
+    				id: 37,
+    				name: "焼きプリンタルト",
+    				red: 0.0,
+    				green: 0.0,
+    				yellow: 1.5,
+    				cost: 66
     			}
     		],
     		$menuKanshita
@@ -3454,6 +3499,33 @@ var app = (function () {
     			{
     				selected: false,
     				id: 0,
+    				name: "ホイコーロー",
+    				red: 1.4,
+    				green: 0.6,
+    				yellow: 1.6,
+    				cost: 264
+    			},
+    			{
+    				selected: false,
+    				id: 1,
+    				name: "ハンバーグデミソース",
+    				red: 1.5,
+    				green: 0.2,
+    				yellow: 1.3,
+    				cost: 264
+    			},
+    			{
+    				selected: false,
+    				id: 2,
+    				name: "ゆず塩ちゃんこ",
+    				red: 1.0,
+    				green: 0.7,
+    				yellow: 1.3,
+    				cost: 264
+    			},
+    			{
+    				selected: false,
+    				id: 3,
     				name: "ジューシー唐揚げ",
     				red: 2.7,
     				green: 0.0,
@@ -3462,106 +3534,52 @@ var app = (function () {
     			},
     			{
     				selected: false,
-    				id: 1,
-    				name: "ローストンカツ味噌ソース",
-    				red: 1.8,
-    				green: 0.0,
-    				yellow: 3.8,
-    				cost: 264
-    			},
-    			{
-    				selected: false,
-    				id: 2,
-    				name: "ササミチーズカツタルタルソース",
-    				red: 0.9,
-    				green: 0.0,
-    				yellow: 3.9,
-    				cost: 220
-    			},
-    			{
-    				selected: false,
-    				id: 3,
-    				name: "ねぎ塩ハンバーグ",
-    				red: 1.5,
-    				green: 0.2,
-    				yellow: 1.4,
-    				cost: 220
-    			},
-    			{
-    				selected: false,
     				id: 4,
-    				name: "豚と野菜の生姜炒め",
-    				red: 1.4,
-    				green: 0.7,
-    				yellow: 1.7,
-    				cost: 264
+    				name: "かつおカツ青じそだれ",
+    				red: 0.5,
+    				green: 0.2,
+    				yellow: 3.6,
+    				cost: 220
     			},
     			{
     				selected: false,
     				id: 5,
-    				name: "クラムチャウダー",
-    				red: 1.4,
-    				green: 1.1,
-    				yellow: 0.8,
-    				cost: 264
+    				name: "牛肉コロッケ",
+    				red: 0.1,
+    				green: 0.4,
+    				yellow: 2.5,
+    				cost: 110
     			},
     			{
     				selected: false,
     				id: 6,
-    				name: "いわし梅しそフライ",
-    				red: 1.3,
-    				green: 0.0,
-    				yellow: 5.0,
-    				cost: 220
-    			},
-    			{
-    				selected: false,
-    				id: 7,
-    				name: "フライドチキン",
-    				red: 1.0,
-    				green: 0.0,
-    				yellow: 1.9,
-    				cost: 176
-    			},
-    			{
-    				selected: false,
-    				id: 8,
-    				name: "骨まで食べられるカレイ煮つけ",
-    				red: 0.6,
+    				name: "炭焼きチキン",
+    				red: 1.1,
     				green: 0.0,
     				yellow: 0.5,
     				cost: 176
     			},
     			{
     				selected: false,
-    				id: 9,
-    				name: "ポテト野菜サラダ",
-    				red: 0.0,
-    				green: 0.6,
-    				yellow: 0.6,
-    				cost: 110
-    			},
-    			{
-    				selected: false,
-    				id: 10,
-    				name: "肉じゃがコロッケ",
-    				red: 0.1,
-    				green: 0.3,
-    				yellow: 2.7,
-    				cost: 110
-    			},
-    			{
-    				selected: false,
-    				id: 11,
-    				name: "鶏きも煮",
-    				red: 0.6,
+    				id: 7,
+    				name: "鯖味噌煮",
+    				red: 1.8,
     				green: 0.0,
-    				yellow: 0.2,
-    				cost: 88
+    				yellow: 0.4,
+    				cost: 176
     			},
     			{
     				selected: false,
-    				id: 12,
+    				id: 8,
+    				name: "スパイスチキンサラダ",
+    				red: 0.2,
+    				green: 0.4,
+    				yellow: 0.1,
+    				cost: 110
+    			},
+    			{
+    				selected: false,
+    				id: 9,
     				name: "オクラ巣ごもり玉子",
     				red: 1.0,
     				green: 0.1,
@@ -3570,34 +3588,7 @@ var app = (function () {
     			},
     			{
     				selected: false,
-    				id: 13,
-    				name: "そぼろきんぴらごぼう",
-    				red: 0.5,
-    				green: 0.2,
-    				yellow: 0.4,
-    				cost: 88
-    			},
-    			{
-    				selected: false,
-    				id: 14,
-    				name: "わかさぎ南蛮",
-    				red: 0.1,
-    				green: 0.1,
-    				yellow: 0.5,
-    				cost: 88
-    			},
-    			{
-    				selected: false,
-    				id: 15,
-    				name: "オクラとひじきのマヨサラダ",
-    				red: 0.1,
-    				green: 0.3,
-    				yellow: 1.4,
-    				cost: 88
-    			},
-    			{
-    				selected: false,
-    				id: 16,
+    				id: 10,
     				name: "ほうれん草",
     				red: 0.0,
     				green: 0.2,
@@ -3606,97 +3597,79 @@ var app = (function () {
     			},
     			{
     				selected: false,
-    				id: 17,
-    				name: "だし巻き",
-    				red: 1.1,
-    				green: 0.0,
-    				yellow: 0.2,
-    				cost: 66
-    			},
-    			{
-    				selected: false,
-    				id: 18,
-    				name: "ひじき煮",
-    				red: 0.3,
+    				id: 11,
+    				name: "小松菜と揚げ生姜風味",
+    				red: 0.2,
     				green: 0.1,
-    				yellow: 0.4,
-    				cost: 66
+    				yellow: 0.2,
+    				cost: 88
     			},
     			{
     				selected: false,
-    				id: 19,
-    				name: "南瓜サラダ",
+    				id: 12,
+    				name: "ひじきオクラ和え",
+    				red: 0.2,
+    				green: 0.2,
+    				yellow: 0.3,
+    				cost: 88
+    			},
+    			{
+    				selected: false,
+    				id: 13,
+    				name: "ポテトサラダ",
     				red: 0.0,
-    				green: 0.4,
+    				green: 0.5,
     				yellow: 0.8,
     				cost: 66
     			},
     			{
     				selected: false,
-    				id: 20,
-    				name: "冷奴",
+    				id: 14,
+    				name: "鶏きも煮",
     				red: 0.6,
     				green: 0.0,
-    				yellow: 0.0,
-    				cost: 44
+    				yellow: 0.2,
+    				cost: 88
     			},
     			{
     				selected: false,
-    				id: 21,
-    				name: "温泉玉子",
-    				red: 1.0,
+    				id: 15,
+    				name: "フルーツヨーグルト",
+    				red: 0.5,
     				green: 0.0,
-    				yellow: 0.0,
-    				cost: 44
-    			},
-    			{
-    				selected: false,
-    				id: 22,
-    				name: "ミニサラダ",
-    				red: 0.0,
-    				green: 0.1,
-    				yellow: 0.0,
-    				cost: 44
-    			},
-    			{
-    				selected: false,
-    				id: 23,
-    				name: "豚汁",
-    				red: 0.6,
-    				green: 0.4,
-    				yellow: 0.4,
+    				yellow: 0.5,
     				cost: 110
     			},
     			{
     				selected: false,
-    				id: 24,
-    				name: "味噌汁",
-    				red: 0.4,
-    				green: 0.0,
-    				yellow: 0.3,
-    				cost: 33
+    				id: 16,
+    				name: "大学芋",
+    				red: 0.0,
+    				green: 0.8,
+    				yellow: 1.2,
+    				cost: 88
     			},
     			{
     				selected: false,
-    				id: 25,
-    				name: "鶏卵うどん",
-    				red: 1.3,
+    				id: 17,
+    				name: "カレーあんかけうどん",
+    				red: 1.0,
     				green: 0.0,
-    				yellow: 5.1,
+    				yellow: 4.9,
     				cost: 341
     			},
     			{
     				selected: false,
-    				id: 26,
-    				name: "鶏卵そば",
-    				red: 1.3,
+    				id: 18,
+    				name: "カレーあんかけそば",
+    				red: 1.0,
     				green: 0.0,
-    				yellow: 4.7,
+    				yellow: 4.5,
     				cost: 341
     			},
     			{
     				selected: false,
-    				id: 27,
+    				id: 19,
     				name: "きつねうどん",
     				red: 0.9,
     				green: 0.0,
@@ -3705,7 +3678,7 @@ var app = (function () {
     			},
     			{
     				selected: false,
-    				id: 28,
+    				id: 20,
     				name: "きつねそば",
     				red: 0.9,
     				green: 0.0,
@@ -3714,70 +3687,43 @@ var app = (function () {
     			},
     			{
     				selected: false,
-    				id: 29,
-    				name: "かけうどん",
-    				red: 0.0,
+    				id: 21,
+    				name: "担々麺",
+    				red: 0.9,
     				green: 0.0,
-    				yellow: 4.2,
-    				cost: 209
-    			},
-    			{
-    				selected: false,
-    				id: 30,
-    				name: "かけそば",
-    				red: 0.0,
-    				green: 0.0,
-    				yellow: 3.8,
-    				cost: 209
-    			},
-    			{
-    				selected: false,
-    				id: 31,
-    				name: "チキン塩ラーメン",
-    				red: 1.2,
-    				green: 0.1,
-    				yellow: 5.9,
+    				yellow: 7.4,
     				cost: 429
     			},
     			{
     				selected: false,
-    				id: 32,
-    				name: "塩ラーメン",
-    				red: 0.6,
-    				green: 0.1,
-    				yellow: 4.8,
-    				cost: 385
-    			},
-    			{
-    				selected: false,
-    				id: 33,
-    				name: "温玉ねぎとろ丼",
+    				id: 22,
+    				name: "ピリ辛サーモン丼",
     				red: 1.5,
-    				green: 0.1,
-    				yellow: 6.1,
+    				green: 0.0,
+    				yellow: 5.6,
     				cost: 462
     			},
     			{
     				selected: false,
-    				id: 34,
-    				name: "チキンカツ南蛮丼",
-    				red: 1.3,
-    				green: 0.1,
-    				yellow: 10.2,
+    				id: 23,
+    				name: "トンカツ茶漬け丼",
+    				red: 1.4,
+    				green: 0.0,
+    				yellow: 6.1,
     				cost: 407
     			},
     			{
     				selected: false,
-    				id: 35,
-    				name: "チキンカツカレー",
-    				red: 1.5,
+    				id: 24,
+    				name: "ロースカツカレー",
+    				red: 1.6,
     				green: 0.3,
-    				yellow: 10.0,
+    				yellow: 9.1,
     				cost: 407
     			},
     			{
     				selected: false,
-    				id: 36,
+    				id: 25,
     				name: "カレーライス",
     				red: 0.2,
     				green: 0.3,
@@ -3786,125 +3732,35 @@ var app = (function () {
     			},
     			{
     				selected: false,
-    				id: 37,
-    				name: "ライス",
-    				red: 0.0,
-    				green: 0.0,
-    				yellow: 5.1,
-    				cost: 115
-    			},
-    			{
-    				selected: false,
-    				id: 38,
-    				name: "ハンバーグおろしソース定食（小鉢1品付）",
-    				red: 1.9,
-    				green: 0.2,
-    				yellow: 5.1,
-    				cost: 450
-    			},
-    			{
-    				selected: false,
-    				id: 39,
-    				name: "揚げ鶏トマトソース定食（小鉢1品付）【水曜日】",
-    				red: 4.9,
-    				green: 0.2,
-    				yellow: 5.5,
+    				id: 26,
+    				name: "ジューシー唐揚げ定食（小鉢1品付）月月曜日】【】＋＋＋",
+    				red: 3.1,
+    				green: 0.1,
+    				yellow: 6.1,
     				cost: 500
     			},
     			{
     				selected: false,
-    				id: 40,
-    				name: "和風カツ丼定食（小鉢1品付）【】",
-    				red: 1.8,
-    				green: 0.1,
-    				yellow: 8.2,
-    				cost: 500
-    			},
-    			{
-    				selected: false,
-    				id: 41,
-    				name: "チキンカツ柚子胡椒マヨ定食（小鉢1品付）【】",
-    				red: 1.6,
-    				green: 0.1,
+    				id: 27,
+    				name: "餃子野菜あんかけ定食（小鉢1品付）【火曜日】",
+    				red: 0.6,
+    				green: 0.4,
     				yellow: 7.8,
     				cost: 450
     			},
     			{
     				selected: false,
-    				id: 42,
-    				name: "牛肉炒め定食（小鉢1品付）【火曜日】",
-    				red: 3.8,
-    				green: 0.6,
-    				yellow: 4.5,
-    				cost: 500
-    			},
-    			{
-    				selected: false,
-    				id: 43,
-    				name: "豚塩カルビ丼定食（小鉢1品付）【】",
-    				red: 2.4,
-    				green: 0.2,
-    				yellow: 5.6,
-    				cost: 500
-    			},
-    			{
-    				selected: false,
-    				id: 44,
-    				name: "ハンバーグデミソース定食（小鉢1品付）",
-    				red: 1.9,
-    				green: 0.2,
-    				yellow: 5.1,
+    				id: 28,
+    				name: "チキンカツチリソース定食（小鉢1品付）【水曜日】【】",
+    				red: 1.6,
+    				green: 0.1,
+    				yellow: 7.6,
     				cost: 450
     			},
     			{
     				selected: false,
-    				id: 45,
-    				name: "トンカツおろしソース定食（小鉢1品付）",
-    				red: 2.2,
-    				green: 0.1,
-    				yellow: 7.1,
-    				cost: 500
-    			},
-    			{
-    				selected: false,
-    				id: 46,
-    				name: "ビビンバ丼定食（小鉢1品付）【】",
-    				red: 1.4,
-    				green: 0.2,
-    				yellow: 6.2,
-    				cost: 500
-    			},
-    			{
-    				selected: false,
-    				id: 47,
-    				name: "唐揚げ香味ソース定食（小鉢1品付）【金曜日】",
-    				red: 2.5,
-    				green: 0.1,
-    				yellow: 5.5,
-    				cost: 450
-    			},
-    			{
-    				selected: false,
-    				id: 48,
-    				name: "豚生姜炒め定食（小鉢1品付）【木曜日】",
-    				red: 3.1,
-    				green: 0.6,
-    				yellow: 5.4,
-    				cost: 500
-    			},
-    			{
-    				selected: false,
-    				id: 49,
-    				name: "和風カツ玉子あんかけ丼定食（小鉢1品付）【】",
-    				red: 2.2,
-    				green: 0.0,
-    				yellow: 8.1,
-    				cost: 500
-    			},
-    			{
-    				selected: false,
-    				id: 50,
-    				name: "照りタルハンバーグ定食（小鉢1品付）",
+    				id: 29,
+    				name: "照りタルハンバーグ定食（小鉢1品付）【木曜日】",
     				red: 1.9,
     				green: 0.2,
     				yellow: 6.7,
@@ -3912,20 +3768,11 @@ var app = (function () {
     			},
     			{
     				selected: false,
-    				id: 51,
-    				name: "トンカツ味噌ソース定食（小鉢1品付）【】",
-    				red: 2.2,
-    				green: 0.1,
-    				yellow: 7.6,
-    				cost: 500
-    			},
-    			{
-    				selected: false,
-    				id: 52,
-    				name: "チキンカツ塩レモン丼定食（小鉢1品付）【】",
-    				red: 1.6,
+    				id: 30,
+    				name: "油淋鶏定食（小鉢1品付）【金曜日】",
+    				red: 4.9,
     				green: 0.2,
-    				yellow: 9.0,
+    				yellow: 6.0,
     				cost: 500
     			}
     		],
@@ -3938,146 +3785,146 @@ var app = (function () {
     			{
     				selected: false,
     				id: 0,
-    				name: "油淋ハンバーグ",
-    				red: 1.5,
-    				green: 0.1,
-    				yellow: 1.3,
-    				cost: 220
-    			},
-    			{
-    				selected: false,
-    				id: 1,
-    				name: "塩から揚げ",
-    				red: 4.6,
+    				name: "タンドリーチキン",
+    				red: 4.7,
     				green: 0.0,
-    				yellow: 2.7,
+    				yellow: 0.2,
     				cost: 308
     			},
     			{
     				selected: false,
+    				id: 1,
+    				name: "豚野菜柚子胡椒ポン酢炒め",
+    				red: 1.4,
+    				green: 0.7,
+    				yellow: 1.3,
+    				cost: 264
+    			},
+    			{
+    				selected: false,
     				id: 2,
-    				name: "チキンカツ七味マヨ",
-    				red: 1.3,
+    				name: "ローストンカツおろしソース",
+    				red: 1.8,
     				green: 0.0,
-    				yellow: 4.7,
-    				cost: 220
+    				yellow: 3.3,
+    				cost: 264
     			},
     			{
     				selected: false,
     				id: 3,
-    				name: "豚と野菜の生姜炒め",
-    				red: 1.4,
-    				green: 0.7,
-    				yellow: 1.7,
-    				cost: 264
+    				name: "ハンバーグチーズソース",
+    				red: 2.1,
+    				green: 0.1,
+    				yellow: 0.9,
+    				cost: 220
     			},
     			{
     				selected: false,
     				id: 4,
-    				name: "クラムチャウダー",
-    				red: 1.4,
-    				green: 1.1,
-    				yellow: 0.8,
-    				cost: 264
+    				name: "鯖生姜煮",
+    				red: 1.8,
+    				green: 0.0,
+    				yellow: 0.5,
+    				cost: 176
     			},
     			{
     				selected: false,
     				id: 5,
-    				name: "ローストンカツごまソース",
-    				red: 1.8,
+    				name: "白身魚フライ",
+    				red: 0.5,
     				green: 0.0,
-    				yellow: 3.7,
-    				cost: 264
+    				yellow: 6.0,
+    				cost: 220
     			},
     			{
     				selected: false,
     				id: 6,
-    				name: "フライドチキン",
-    				red: 1.0,
-    				green: 0.0,
-    				yellow: 1.9,
+    				name: "餃子野菜あんかけ",
+    				red: 0.2,
+    				green: 0.3,
+    				yellow: 2.9,
     				cost: 176
     			},
     			{
     				selected: false,
     				id: 7,
-    				name: "骨まで食べられるカレイ煮つけ",
-    				red: 0.6,
+    				name: "梅しそトンカツ",
+    				red: 0.7,
     				green: 0.0,
-    				yellow: 0.5,
+    				yellow: 2.1,
     				cost: 176
     			},
     			{
     				selected: false,
     				id: 8,
-    				name: "ちくわの磯部揚げ",
-    				red: 0.5,
-    				green: 0.0,
-    				yellow: 1.3,
+    				name: "牛肉コロッケ",
+    				red: 0.1,
+    				green: 0.4,
+    				yellow: 2.5,
     				cost: 110
     			},
     			{
     				selected: false,
     				id: 9,
-    				name: "ポテト野菜サラダ",
+    				name: "若布コーンサラダ",
     				red: 0.0,
     				green: 0.6,
-    				yellow: 0.6,
+    				yellow: 0.0,
     				cost: 110
     			},
     			{
     				selected: false,
     				id: 10,
-    				name: "オクラ巣ごもり玉子",
-    				red: 1.0,
-    				green: 0.1,
-    				yellow: 0.1,
+    				name: "鶏きも煮",
+    				red: 0.6,
+    				green: 0.0,
+    				yellow: 0.2,
     				cost: 88
     			},
     			{
     				selected: false,
     				id: 11,
-    				name: "そぼろきんぴらごぼう",
-    				red: 0.5,
-    				green: 0.2,
-    				yellow: 0.4,
+    				name: "小松菜と揚げ生姜風味",
+    				red: 0.2,
+    				green: 0.1,
+    				yellow: 0.2,
     				cost: 88
     			},
     			{
     				selected: false,
     				id: 12,
-    				name: "わかさぎ南蛮",
-    				red: 0.1,
-    				green: 0.1,
-    				yellow: 0.5,
-    				cost: 88
-    			},
-    			{
-    				selected: false,
-    				id: 13,
-    				name: "オクラとひじきのマヨサラダ",
-    				red: 0.1,
+    				name: "さっぱり揚げ出し茄子",
+    				red: 0.0,
     				green: 0.3,
     				yellow: 1.4,
     				cost: 88
     			},
     			{
     				selected: false,
+    				id: 13,
+    				name: "だし巻き",
+    				red: 1.1,
+    				green: 0.0,
+    				yellow: 0.2,
+    				cost: 66
+    			},
+    			{
+    				selected: false,
     				id: 14,
-    				name: "ほうれん草胡麻和え",
+    				name: "ほうれん草おひたし",
     				red: 0.0,
     				green: 0.2,
-    				yellow: 0.3,
+    				yellow: 0.0,
     				cost: 66
     			},
     			{
     				selected: false,
     				id: 15,
-    				name: "南瓜サラダ",
-    				red: 0.0,
-    				green: 0.4,
-    				yellow: 0.8,
-    				cost: 66
+    				name: "温泉玉子",
+    				red: 1.0,
+    				green: 0.0,
+    				yellow: 0.0,
+    				cost: 44
     			},
     			{
     				selected: false,
@@ -4109,19 +3956,19 @@ var app = (function () {
     			{
     				selected: false,
     				id: 19,
-    				name: "鶏卵うどん",
-    				red: 1.3,
+    				name: "カレーあんかけうどん",
+    				red: 1.0,
     				green: 0.0,
-    				yellow: 5.1,
+    				yellow: 4.9,
     				cost: 341
     			},
     			{
     				selected: false,
     				id: 20,
-    				name: "鶏卵そば",
-    				red: 1.3,
+    				name: "カレーあんかけそば",
+    				red: 1.0,
     				green: 0.0,
-    				yellow: 4.7,
+    				yellow: 4.5,
     				cost: 341
     			},
     			{
@@ -4163,24 +4010,6 @@ var app = (function () {
     			{
     				selected: false,
     				id: 25,
-    				name: "ピリ辛サーモン丼",
-    				red: 1.5,
-    				green: 0.0,
-    				yellow: 5.6,
-    				cost: 462
-    			},
-    			{
-    				selected: false,
-    				id: 26,
-    				name: "チキンカツ南蛮丼",
-    				red: 1.3,
-    				green: 0.1,
-    				yellow: 10.2,
-    				cost: 407
-    			},
-    			{
-    				selected: false,
-    				id: 27,
     				name: "欧風カレー",
     				red: 0.5,
     				green: 0.2,
@@ -4189,12 +4018,30 @@ var app = (function () {
     			},
     			{
     				selected: false,
-    				id: 28,
-    				name: "欧風チーズカレー",
-    				red: 2.3,
+    				id: 26,
+    				name: "欧風カツカレー",
+    				red: 1.9,
     				green: 0.2,
-    				yellow: 6.7,
+    				yellow: 8.9,
     				cost: 495
+    			},
+    			{
+    				selected: false,
+    				id: 27,
+    				name: "豚カツ山賊タレ丼",
+    				red: 2.4,
+    				green: 0.1,
+    				yellow: 7.6,
+    				cost: 462
+    			},
+    			{
+    				selected: false,
+    				id: 28,
+    				name: "ビビンバ丼",
+    				red: 1.1,
+    				green: 0.2,
+    				yellow: 6.0,
+    				cost: 407
     			},
     			{
     				selected: false,
@@ -4235,8 +4082,8 @@ var app = (function () {
     			{
     				selected: false,
     				id: 33,
-    				name: "つけ麺辛味みそ）",
-    				red: 1.2,
+    				name: "つけ麺鶏塩白湯）",
+    				red: 1.7,
     				green: 0.1,
     				yellow: 8.3,
     				cost: 528
