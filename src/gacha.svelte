@@ -55,6 +55,12 @@
 >
 <button
     on:click={() => {
+        price = 650;
+        castLots();
+    }}>650円</button
+>
+<button
+    on:click={() => {
         price = 1000;
         castLots();
     }}>1000円</button
